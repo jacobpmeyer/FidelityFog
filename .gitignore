@@ -28,3 +28,5 @@
 
 # Added by Jacob Meyer
 node_modules/
+bundle.js
+bundle.js.map
