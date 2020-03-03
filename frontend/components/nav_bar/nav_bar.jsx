@@ -17,7 +17,7 @@ class NavBar extends React.Component{
       return (
         <div className="NavBar">
           <ul>
-            <li>{this.props.currentUser}</li>
+            <li>{this.props.currentUser.username}</li>
             <li>
               <button onClick={this.handleLogout}>
                 Log Out!
@@ -28,14 +28,16 @@ class NavBar extends React.Component{
       )
     } else {
       return (
-        <ul>
-          <li>
-            <Link to='/signup'>Create account</Link>
-          </li>
-          <li>
-            <Link to='/login'>Sign In</Link>
-          </li>
-        </ul>
+        <div className="NavBar">
+          <ul>
+            <li>
+              <Link to='/signup'>Create account</Link>
+            </li>
+            <li>
+              <Link to='/login'>Sign In</Link>
+            </li>
+          </ul>
+        </div>
       )
     }
   }

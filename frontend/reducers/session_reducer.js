@@ -3,15 +3,12 @@ import {
   LOGOUT_CURRENT_USER
 } from '../actions/session_actions'
 
-const _defaultSession = {
-  id: null
-}
 
-const SessionReducer = (state = _defaultSession, action) => {
+const SessionReducer = (state = {}, action) => {
   Object.freeze(state)
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return { id: action.currentUser.id }
+      return { id: action.user.id }
     case LOGOUT_CURRENT_USER:
       return _defaultSession
     default:
