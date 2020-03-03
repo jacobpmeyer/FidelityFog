@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { render } from 'react-dom'
+import NavBarLoggedIn from './nav_bar_logged_in'
+import NavBarLoggedOut from './nav_bar_logged_out'
 
 class NavBar extends React.Component{
   constructor(props) {
@@ -13,34 +13,18 @@ class NavBar extends React.Component{
   }
 
   render() {
+    const {logout, currentUser} = this.props
     if (this.props.currentUser) {
       return (
-        <div className="NavBar">
-          <ul>
-            <li>{this.props.currentUser.username}</li>
-            <li>
-              <button onClick={this.handleLogout}>
-                Log Out!
-              </button>
-            </li>
-          </ul>
-        </div>
+        <NavBarLoggedIn 
+          currentUser={currentUser} 
+          logut={logout}
+          handleLogout={this.handleLogout} 
+        />
       )
     } else {
       return (
-        <div className="NavBar">
-          <ul>
-            <li>
-              <Link to='/signup'>Create account</Link>
-            </li>
-            <li>
-              <Link to='/login'>Sign In</Link>
-            </li>
-            <li>
-              <Link to='/demo'>Demo</Link>
-            </li>
-          </ul>
-        </div>
+        <NavBarLoggedOut />
       )
     }
   }

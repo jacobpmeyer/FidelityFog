@@ -7,9 +7,7 @@ import { AuthRoute } from '../util/route_util'
 import DemoFormContainer from './demo_form/demo_form_container'
 
 const App = () => (
-  <div>
-    <h1><Link to="/">FidelityFog</Link></h1>
-
+  <div className="main-content">
     <Route exact path="/" component={NavBarContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />

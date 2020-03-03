@@ -1,0 +1,25 @@
+.nav-bar {
+  background-image: url("../images/splash_banner.jpg");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+
+.nav-bar > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar > .logo {
+  width: fit-content;
+}
+
+.nav-bar > ul > li {
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  justify-content: center;
+}
