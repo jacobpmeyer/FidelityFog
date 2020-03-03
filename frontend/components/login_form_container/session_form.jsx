@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log("handlesubmit log")
     e.preventDefault()
     const user = Object.assign({}, this.state)
     this.props.formAction(user)
@@ -24,7 +23,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let email = <div>hello</div>
+    let email = <div></div>
     if (this.props.formType === 'Create account') {
       email = (
         <label>Email
@@ -36,7 +35,6 @@ class SessionForm extends React.Component {
         </label>
       )
     }
-    console.log(this.props.formType)
     return( 
       <form className="session-form" onSubmit={this.handleSubmit}>
         <label>username
