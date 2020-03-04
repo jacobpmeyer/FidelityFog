@@ -8,8 +8,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script>
-      window.logoImg = "<%=  %>%"
+      window.logoImg = "<%= image_url('soundcloud-icon-1.svg') %>";
     </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans|Righteous|Roboto&display=swap');
+    </style>
   </head>
 
   <body>

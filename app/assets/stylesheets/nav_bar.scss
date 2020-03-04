@@ -1,25 +1,66 @@
 .nav-bar {
-  background-image: url("../images/splash_banner.jpg");
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 25px;
-  margin-right: 10px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+    li {
+      list-style: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      margin: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+  
 }
 
-
-.nav-bar > ul {
+.logo-box {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-bar > .logo {
-  width: fit-content;
+.title {
+  color: #f50;
+  font-family: 'Righteous', cursive;
 }
 
-.nav-bar > ul > li {
-  padding: 10px;
-  margin: 5px;
-  list-style: none;
-  justify-content: center;
+.logo {
+  margin-right: 7px;
+  img {
+    width: 50px;
+    padding-left: 30px;
+    padding-top: 25px;
+    margin-bottom: 8px;
+  }
 }
+
+
+
+.sign-in {
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.sign-up {
+  color: white;
+  background-color: #f50;
+  border-radius: 3px;
+  
+}
+
+.demo {
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
