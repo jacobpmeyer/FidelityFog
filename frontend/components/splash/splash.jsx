@@ -16,10 +16,10 @@ class Splash extends React.Component {
           <div className="splash-message">
             <div className="splash-sub">
               <div className="splash-header">
-                Discover more with SoundCloud Go+
+                Discover more with FidelityFog Go+
               </div>
               <div className="splash-p">
-                SoundCloud Go+ lets you listen offline, ad-free, 
+                FidelityFog Go+ lets you listen offline, ad-free, 
                 with over 150 million tracks — and growing.
               </div>
             </div>
