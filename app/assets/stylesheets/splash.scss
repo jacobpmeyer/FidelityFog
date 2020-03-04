@@ -1,0 +1,55 @@
+.splash-main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 330px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.splash-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.splash-p {
+  max-width: 530px;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.splash-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.splash-button-1 {
+  font-size: 17px;
+  min-width: 130px;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+}
+
+.splash-button-2 {
+  padding: 10px;
+  min-width: 170px;
+  background-color: #f50;
+  border: 1px solid #f50;
+  border-radius: 3px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.splash-message {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
