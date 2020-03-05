@@ -1,27 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { openModal } from '../../actions/modal_actions'
 
-const NavBarLoggedOut = (props) => {
+const NavBarLoggedOut = ({ openModal }) => {
   
   return (
     <div className="nav-bar">
       <div className="logo-box">
+
         <div className="logo">
           <img src={window.logoImg} alt="Logo" />;
-          
         </div>
-        <div className="title">FidelityFog</div>
+        <div className="title"><Link to="/">FidelityFog</Link></div>
+
       </div>
+
       <ul>
+
         <li className="sign-in">
-          <Link to='/login'>Sign in</Link>
+          <button onClick={() => openModal("login")}>Sign in</button>
         </li>
         <li className="sign-up">
-          <Link to='/signup'>Create account</Link>
+          <button onClick={() => openModal("signup")}>Create account</button>
         </li>
-        <li className="demo">
-          <Link to='/demo'>Demo</Link>
-        </li>
+        
       </ul>
     </div>
   )

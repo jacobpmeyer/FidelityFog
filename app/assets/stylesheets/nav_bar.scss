@@ -10,7 +10,7 @@
     margin-right: 5px;
     li {
       list-style: none;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 13px;
       margin: 5px;
       padding-left: 15px;
@@ -43,6 +43,9 @@
   }
 }
 
+.form-welcome {
+  font-size: 28px;
+}
 
 
 .sign-in {
@@ -64,3 +67,18 @@
   border-radius: 3px;
 }
 
+// Starting styles for logged in nav bar
+
+.username {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.log-out {
+  color: white;
+  background-color: #f50;
+  border-radius: 3px;
+  padding: 5px 10px 
+}

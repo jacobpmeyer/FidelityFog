@@ -10,6 +10,7 @@ class NavBar extends React.Component{
 
   handleLogout() {
     this.props.logout()
+    
   }
 
   render() {
@@ -24,7 +25,7 @@ class NavBar extends React.Component{
       )
     } else {
       return (
-        <NavBarLoggedOut />
+        <NavBarLoggedOut openModal={this.props.openModal} />
       )
     }
   }

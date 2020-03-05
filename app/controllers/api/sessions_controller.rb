@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render :show
     else
-      render json: ['wrong username/passoword combo']
+      render json: ["Invalid username/password combination"], status: 422
     end
   end
 

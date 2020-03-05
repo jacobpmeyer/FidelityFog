@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBarLoggedIn = (props) => {
   return (
@@ -6,12 +7,13 @@ const NavBarLoggedIn = (props) => {
       <div className="logo">
         <img src={window.logoImg} alt="Logo" />;
       </div>
+      <div className="title"><Link to="/">FidelityFog</Link></div>
       <ul>
-        <li>{props.currentUser.username}</li>
+        <li className="username">Hello, {props.currentUser.username}!</li>
         <li>
-          <button onClick={props.handleLogout}>
+          <button onClick={props.handleLogout} className="log-out">
             Log Out!
-              </button>
+          </button>
         </li>
       </ul>
     </div>
