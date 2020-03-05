@@ -5,9 +5,11 @@ one:
   artist_name: MyString
   artist_id: 1
   description: MyText
+  user_id: 1
 
 two:
   title: MyString
   artist_name: MyString
   artist_id: 1
   description: MyText
+  user_id: 1
