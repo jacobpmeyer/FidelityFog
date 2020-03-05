@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SessionForm from './session_form'
-import { signup } from '../../actions/session_actions'
+import { signup, login } from '../../actions/session_actions'
 import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = ({ errors }) => ({
