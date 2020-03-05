@@ -1,4 +1,4 @@
-export const fetchTracks = () => (
+export const fetchAllTracks = () => (
   $.ajax({
     url: '/api/tracks',
     method: 'GET'
