@@ -35,6 +35,8 @@ class Api::TracksController < ApplicationController
     @track.destroy
     render json: ["Track successfully destroyed"]
   end
-
-  track_params(:track).permit(:title, :artist_name, :user_id, :description)
+  private 
+  def track_params
+    params.permit(:track).require(:title, :artist_name, :user_id, :description)
+  end
 end
