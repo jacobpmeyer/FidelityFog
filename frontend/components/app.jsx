@@ -7,15 +7,19 @@ import DemoFormContainer from './demo_form/demo_form_container'
 import SplashContainer from './splash/splash_container'
 import Modal from './modal/modal'
 
-const App = () => (
-  <div className="main-content">
-    <Modal />
-    <Switch>
-      <Route exact path="/" component={SplashContainer} />
-      <Route path="*" component={SplashContainer } />
-    </Switch>
+const App = () => {
+  return (
+    <div className="main-content">
+      {console.log(window.currentUser)}
+      <Modal />
+      <Switch>
+        <Route exact path="/" component={SplashContainer} />
+        <Route path="*" component={SplashContainer } />
+      </Switch>
 
-  </div>
-)
+    </div>
+  )
+}
+
 
 export default App

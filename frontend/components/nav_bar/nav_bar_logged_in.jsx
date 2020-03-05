@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom'
 const NavBarLoggedIn = (props) => {
   return (
     <div className="nav-bar">
-      <div className="logo">
-        <img src={window.logoImg} alt="Logo" />;
+      <div className="logo-box">
+
+        <div className="logo">
+          <img src={window.logoImg} alt="Logo" />;
+        </div>
+        <div className="title"><Link to="/">FidelityFog</Link></div>
+
       </div>
-      <div className="title"><Link to="/">FidelityFog</Link></div>
       <ul>
         <li className="username">Hello, {props.currentUser.username}!</li>
         <li>
