@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { AuthRoute } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import SplashContainer from './splash/splash_container'
 import Modal from './modal/modal'
 
