@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import configureStore from './store/store'
 import Root from './components/root'
 import { openModal } from './actions/modal_actions'
+import { createTrack } from './actions/track_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root")
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.store = store
   window.openModal = openModal
+  window.createTrack = createTrack
   
   ReactDOM.render(<Root store={store} />, root)
 })

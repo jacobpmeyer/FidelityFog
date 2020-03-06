@@ -8,7 +8,6 @@ class UserDiscover extends React.Component {
   }
 
   render() {
-    console.log("user discover log")
     return (
       <div className="user">
         <UserNavBarContainer />
