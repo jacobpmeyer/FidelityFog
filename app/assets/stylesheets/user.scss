@@ -1,0 +1,48 @@
+.user {
+  font-family: 'Roboto', sans-serif;
+  width: 1120px;
+  padding: 30px;
+  padding-top: 46px;
+  background-color: white;
+  margin: 0 auto;
+
+  height: 800px;
+}
+
+.upload-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 450px;
+  box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+  border: 1px solid #f2f2f2;
+  
+  input {
+    border: 2px solid #f2f2f2;
+    border-radius: 3px;
+
+  }
+
+  label {
+    text-align: center;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: #f50;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+  }
+}

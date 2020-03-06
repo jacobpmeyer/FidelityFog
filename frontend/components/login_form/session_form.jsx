@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link, Route, Redirect } from 'react-router-dom'
 import { demoUser } from '../../util/demo_user'
 
 
@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const user = Object.assign({}, this.state)
-    this.props.formAction(user).then(() => this.props.closeModal())
+    this.props.formAction(user).then(() => this.props.closeModal()).then(() => console.log("is this working?"))
   }
 
   update(field) {

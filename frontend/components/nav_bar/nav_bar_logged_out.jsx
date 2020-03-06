@@ -9,7 +9,7 @@ const NavBarLoggedOut = ({ openModal }) => {
       <div className="logo-box">
 
         <div className="logo">
-          <img src={window.logoImg} alt="Logo" />;
+          <img src={window.logoSplash} alt="Logo" />;
         </div>
         <div className="title"><Link to="/">FidelityFog</Link></div>
 
