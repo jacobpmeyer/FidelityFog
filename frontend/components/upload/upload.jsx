@@ -12,6 +12,7 @@ class Upload extends React.Component {
       <div className="user upload-content">
         <UserNavBarContainer />
         <form className="upload-form" onSubmit={this.handleSubmit}>
+          <h1>Upload your track</h1>
           <label>Title
             <br/>
             <input type="text"/>

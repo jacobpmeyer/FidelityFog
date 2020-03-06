@@ -24,6 +24,12 @@
   height: 450px;
   box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
   border: 1px solid #f2f2f2;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
   
   input {
     border: 2px solid #f2f2f2;

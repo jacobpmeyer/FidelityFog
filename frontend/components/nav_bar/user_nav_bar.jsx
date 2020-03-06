@@ -17,15 +17,17 @@ class UserNavBar extends React.Component {
     return (
       <div className="user-nav">
         <div className="user-nav-items">
-          <div className="nav-logo-box">
+          <Link className="nav-logo-box" to="/discover">
             <div className="nav-logo">
               <img src={window.logoUserNav} alt="Logo" />
             </div>
-          </div>
+          </Link>
           <ul className="nav-left">
-            <li>
-              Home
-            </li>
+            <Link to="/discover">
+              <li>
+                Home
+              </li>
+            </Link>
             <li>
               Stream
             </li>

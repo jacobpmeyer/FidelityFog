@@ -33,10 +33,11 @@ class Api::TracksController < ApplicationController
   def destroy
     @track = @current_user.tracks.find(params[:id])
     @track.destroy
-    render json: ["Track successfully destroyed"]
+    render json: ["Track successfully deleted"]
   end
   private 
   def track_params
-    params.permit(:track).require(:title, :artist_name, :user_id, :description)
+    params.permit(:track).require(:title, :artist_name, :artist_id,
+      :description, :track_file)
   end
 end
