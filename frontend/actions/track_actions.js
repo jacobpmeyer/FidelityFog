@@ -33,21 +33,21 @@ export const fetchAllTracks = () => dispatch => (
 export const fetchTrack = track => dispatch => (
   trackApiUtil.fetchTrack(track)
     .then(track => dispatch(fetchTrack(track)),
-      err => dispatch(receiveTrackErrors(err))
+      err => dispatch(receiveTrackErrors(err.responseJSON))
     )
 )
 
 export const createTrack = track => dispatch => (
   trackApiUtil.createTrack(track)
     .then(track => dispatch(receiveTrack(track)),
-      err => dispatch(receiveTrackErrors(err))
+      err => dispatch(receiveTrackErrors(err.responseJSON))
     )
 )
 
 export const updateTrack = track => dispatch => (
   trackApiUtil.createTrack(track)
     .then(track => dispatch(receiveTrack(track)),
-      err => dispatch(receiveTrackErrors(err))
+      err => dispatch(receiveTrackErrors(err.responseJSON))
     )
 )
 

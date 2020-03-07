@@ -21,7 +21,6 @@ class Upload extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const track = new FormData()
     track.append("track[title]", this.state.title)
     track.append("track[artist_name]", this.state.artist_name)
     track.append("track[artist_id]", this.state.artist_id)

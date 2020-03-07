@@ -41,7 +41,7 @@ class UserNavBar extends React.Component {
           <div className="nav-right">
             <ul className="nav-right-buttons">
               <li>
-                <Link to="/upload">Upload</Link>
+                <Link className="upload-link" to="/upload">Upload</Link>
               </li>
               <li>
                 {this.props.currentUser.username}

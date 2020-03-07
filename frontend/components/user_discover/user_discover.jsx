@@ -1,5 +1,6 @@
 import React from 'react'
 import UserNavBarContainer from '../nav_bar/user_nav_bar_container'
+import IndexContainer from './index_container'
 
 class UserDiscover extends React.Component {
   constructor(props) {
@@ -7,13 +8,23 @@ class UserDiscover extends React.Component {
     
   }
 
+  componentDidMount() {
+    this.props.fetchAllTracks()
+  }
+
   render() {
-    return (
-      <div className="user">
-        <UserNavBarContainer />
-        Hello from the logged in screen
-      </div>
-    )
+    const {tracks} = this.props
+    if (this.props.tracks === null) {
+      return null
+    } else {
+      return (
+        <div className="user">
+          <UserNavBarContainer />
+          <IndexContainer />
+          
+        </div>
+      )
+    }
   }
 }
 
