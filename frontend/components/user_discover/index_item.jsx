@@ -28,20 +28,6 @@ class IndexItem extends React.Component {
     const {track} = this.props
     return(
       <div>
-        <br />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br />
         <h4 >{track.title}</h4>
         <br/>
         <button onClick={this.handlePlay()}>play</button>

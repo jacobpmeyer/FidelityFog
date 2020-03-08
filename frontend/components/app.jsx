@@ -5,6 +5,7 @@ import SplashContainer from './splash/splash_container'
 import Modal from './modal/modal'
 import UserDiscoverContainer from './user_discover/user_discover_container'
 import UploadContainer from './upload/upload_container'
+import TrackShowContainer from './track/track_show_container'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <AuthRoute path="/splash" component={SplashContainer} />
         <ProtectedRoute path="/discover" component={UserDiscoverContainer} />
         <ProtectedRoute path="/upload" component={UploadContainer} />
+        <ProtectedRoute path="/tracks/trackId" component={TrackShowContainer} />
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
       </Switch>
