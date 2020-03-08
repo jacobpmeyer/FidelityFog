@@ -3,17 +3,16 @@ import React from 'react'
 class TrackShow extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
   }
 
   componentDidMount() {
+    console.log(this.props.match.params.trackId)
     this.props.fetchTrack(this.props.match.params.trackId)
   }
 
   render() {
     return (
-      <div>
-        
+      <div className="user">
       </div>
     )
   }

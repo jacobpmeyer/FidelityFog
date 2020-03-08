@@ -32,7 +32,7 @@ export const fetchAllTracks = () => dispatch => (
 
 export const fetchTrack = track => dispatch => (
   trackApiUtil.fetchTrack(track)
-    .then(track => dispatch(fetchTrack(track)),
+    .then(track => dispatch(receiveTrack(track)),
       err => dispatch(receiveTrackErrors(err.responseJSON))
     )
 )

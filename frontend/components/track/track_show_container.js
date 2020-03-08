@@ -2,9 +2,11 @@ import { connect } from 'react-redux'
 import TrackShow from './track_show'
 import { fetchTrack } from '../../actions/track_actions'
 
-const mSTP = (state, ownProps) => ({
-  track: state.tracks[ownProps.match.params.trackId]
-})
+const mSTP = (state, ownProps) => {
+  return {
+    track: state.tracks ? state.tracks[ownProps.match.params.trackId] : null
+  }
+}
 
 const mDTP = dispatch => ({
   fetchTrack: (trackId) => dispatch(fetchTrack(trackId))

@@ -6,16 +6,19 @@ import Modal from './modal/modal'
 import UserDiscoverContainer from './user_discover/user_discover_container'
 import UploadContainer from './upload/upload_container'
 import TrackShowContainer from './track/track_show_container'
+import UserNavBarContainer from './nav_bar/user_nav_bar_container'
 
 const App = () => {
+  const navbar = window.currentUser ? <UserNavBarContainer /> : null
   return (
     <div >
       <Modal />
+      {navbar}
       <Switch>
         <AuthRoute path="/splash" component={SplashContainer} />
         <ProtectedRoute path="/discover" component={UserDiscoverContainer} />
         <ProtectedRoute path="/upload" component={UploadContainer} />
-        <ProtectedRoute path="/tracks/trackId" component={TrackShowContainer} />
+        <ProtectedRoute path="/tracks/:trackId" component={TrackShowContainer} />
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
       </Switch>
