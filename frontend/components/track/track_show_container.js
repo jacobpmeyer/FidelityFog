@@ -4,7 +4,7 @@ import { fetchTrack } from '../../actions/track_actions'
 
 const mSTP = (state, ownProps) => {
   return {
-    track: state.tracks ? state.tracks[ownProps.match.params.trackId] : null
+    track: state.entities.tracks[ownProps.match.params.trackId]
   }
 }
 

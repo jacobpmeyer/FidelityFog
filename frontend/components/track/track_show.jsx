@@ -2,19 +2,25 @@ import React from 'react'
 
 class TrackShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props)  
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.trackId)
     this.props.fetchTrack(this.props.match.params.trackId)
   }
 
   render() {
-    return (
-      <div className="user">
-      </div>
-    )
+    console.log(this.props.track)
+    const { track } = this.props
+    if (this.props.track === undefined) {
+      return null
+    } else {
+      return (
+        <div className="user">
+          {track.title}
+        </div>
+      )
+    }
   }
 }
 

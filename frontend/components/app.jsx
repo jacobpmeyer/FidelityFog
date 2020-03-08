@@ -9,11 +9,10 @@ import TrackShowContainer from './track/track_show_container'
 import UserNavBarContainer from './nav_bar/user_nav_bar_container'
 
 const App = () => {
-  const navbar = window.currentUser ? <UserNavBarContainer /> : null
   return (
     <div >
       <Modal />
-      {navbar}
+      <ProtectedRoute path="/" component={UserNavBarContainer} />
       <Switch>
         <AuthRoute path="/splash" component={SplashContainer} />
         <ProtectedRoute path="/discover" component={UserDiscoverContainer} />

@@ -19,7 +19,6 @@ class UserDiscover extends React.Component {
     } else {
       return (
         <div className="user">
-          <UserNavBarContainer />
           <IndexContainer />
           
         </div>
