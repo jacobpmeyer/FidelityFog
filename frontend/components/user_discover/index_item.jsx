@@ -37,7 +37,6 @@ class IndexItem extends React.Component {
       button = <img src={window.play} alt="play button" />
     }
 
-    console.log(track)
     return(
       <div className="track-index-item">
         <div className="index-album-artwork">

@@ -3,9 +3,9 @@ class Api::TracksController < ApplicationController
   def index
     all_tracks = Track.all
     shuffle = all_tracks.shuffle
-    
-    @tracks = shuffle[0...10]
-
+    #################
+    @tracks = Track.all[0..1]
+    # change this for production
     render :index
   end
 
@@ -25,9 +25,11 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    @track = Track.find(params[:id])
+
     
-    if @track.save
+    @track = Track.find(params[:id])
+
+    if @track.update(track_params)
       render :show
     else
       render json: @track.errors.full_messages, status: 422
@@ -35,13 +37,13 @@ class Api::TracksController < ApplicationController
   end 
 
   def destroy
-    @track = @current_user.tracks.find(params[:id])
+    @track = current_user.tracks.find(params[:id])
     @track.destroy
     render json: ["Track successfully deleted"]
   end
   private 
   def track_params
     params.require(:track).permit(:title, :artist_name, :artist_id,
-      :description, :track_file, :album_art)
+      :description, :track_file, :album_art, :id)
   end
 end

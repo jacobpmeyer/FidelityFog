@@ -9,10 +9,12 @@ class Upload extends React.Component {
       artist_id:this.props.currentUser.id,
       title: "",
       description: "",
-      track_file: null
+      track_file: null,
+      album_art: null
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleFile = this.handleFile.bind(this)
+    this.handleTrack = this.handleTrack.bind(this)
+    this.handlArtwork = this.handlArtwork.bind(this)
   }
 
   handleChange(field) {
@@ -21,23 +23,29 @@ class Upload extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    const track = new FormData();
     track.append("track[title]", this.state.title)
     track.append("track[artist_name]", this.state.artist_name)
     track.append("track[artist_id]", this.state.artist_id)
     track.append("track[description]", this.state.description)
     track.append("track[track_file]", this.state.track_file)
-    track.append("hello", "goodbye")
-    this.props.createTrack(track)
+    track.append("track[album_art]", this.state.album_art)
+    this.props.createTrack(track).then(
+      track => this.props.history.push(`/tracks/${track.id}`)
+    )
   }
 
-  handleFile(e) {
+  handleTrack(e) {
     this.setState({ track_file: e.currentTarget.files[0] })
+  }
+
+  handlArtwork(e) {
+    this.setState({ album_art: e.currentTarget.files[0] })
   }
 
   render() {
     return (
       <div className="user upload-content">
-        <UserNavBarContainer />
         <form className="upload-form" onSubmit={this.handleSubmit}>
           <h1>Upload your track</h1>
           <label>Title
@@ -60,7 +68,15 @@ class Upload extends React.Component {
             <input 
               className="file-input" 
               type="file"
-              onChange={this.handleFile}
+              onChange={this.handleTrack}
+            />
+          </label>
+          <label>Track artwork
+            <br />
+            <input
+              className="file-input"
+              type="file"
+              onChange={this.handlArtwork}
             />
           </label>
           <button>Click to upload</button>
