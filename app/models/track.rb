@@ -9,4 +9,6 @@ class Track < ApplicationRecord
 
   has_one_attached :track_file
 
+  has_one_attached :album_art
+
 end

@@ -1,0 +1,71 @@
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #f50;
+  border-radius: 50%;
+  background-color: #f50;
+  margin-right: 10px;
+  img {
+    width: 17px;
+    color: white;
+    fill: white;
+    padding-left: 3px;
+  }
+}
+
+.pause-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #f50;
+  border-radius: 50%;
+  background-color: #f50;
+  margin-right: 10px;
+  img {
+    width: 17px;
+    color: white;
+    fill: white;
+  }
+}
+
+.track-details {
+  display: flex;
+  justify-content: flex-start;
+  height: 38px;
+  width: 300px;
+  ul {
+    width: 200px;
+  }
+}
+
+.track-index-item {
+  display: flex;
+  justify-content: flex-start;
+  width: 819px;
+  height: 180px;
+  margin-top: 30px;
+}
+
+.index-album-artwork {
+  width: 160px;
+  height: 160px;
+  background-color: lightskyblue;
+  margin-right: 10px;
+}
+
+.artist-link {
+  font-size: 12px;
+  color: #999;
+}
+
+.track-link {
+  font-size: 15px;
+  color: #333333
+}

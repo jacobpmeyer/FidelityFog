@@ -18,6 +18,12 @@ class TrackShow extends React.Component {
       return (
         <div className="user">
           {track.title}
+          <div class="track-button">
+            <img src={window.play} alt="play button" />
+          </div>
+          <div class="track-button">
+            <img src={window.pause} alt="pause button" />
+          </div>
         </div>
       )
     }

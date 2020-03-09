@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom' 
 
 class IndexItem extends React.Component {
   constructor(props) {
@@ -26,14 +27,40 @@ class IndexItem extends React.Component {
 
   render() {
     const {track} = this.props
+    let logo
+    let button
+    if (this.state.playing) {
+      logo = "pause-button"
+      button = <img src={window.pause} alt="pause button" />
+    } else {
+      logo = "play-button"
+      button = <img src={window.play} alt="play button" />
+    }
+
+    console.log(track)
     return(
-      <div>
-        <h4 >{track.title}</h4>
-        <br/>
-        <button onClick={this.handlePlay()}>play</button>
-        <br/>
-        {/* <button onClick={this.handlePause()}>pause</button> */}
-        <audio src={track.trackFile} ref={this.ref} />
+      <div className="track-index-item">
+        <div className="index-album-artwork">
+          <img src={track.albumArt} />
+        </div>
+        <div className="track-details">
+          <div className={logo} onClick={this.handlePlay()}>
+            {button}
+          </div>
+          <ul>
+            <li className="artist-link">
+              <Link to={`/users/${track.artistId}`}>
+                {track.artistName}
+              </Link>
+            </li>
+            <li className="track-link">
+              <Link to={`/tracks/${track.id}`}>
+                {track.artistName} - {track.title}
+              </Link>
+            </li>
+          </ul>
+          <audio src={track.trackFile} ref={this.ref} />
+        </div>
       </div>
     )
   }

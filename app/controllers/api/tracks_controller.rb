@@ -1,7 +1,11 @@
 class Api::TracksController < ApplicationController
 
   def index
-    @tracks = Track.all
+    all_tracks = Track.all
+    shuffle = all_tracks.shuffle
+    
+    @tracks = shuffle[0...10]
+
     render :index
   end
 
@@ -38,6 +42,6 @@ class Api::TracksController < ApplicationController
   private 
   def track_params
     params.require(:track).permit(:title, :artist_name, :artist_id,
-      :description, :track_file)
+      :description, :track_file, :album_art)
   end
 end

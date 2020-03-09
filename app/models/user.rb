@@ -11,6 +11,8 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :artist_id
 
+  has_one_attached :avatar
+
   def password=(password)
       @password = password
       self.password_digest = BCrypt::Password.create(password)
