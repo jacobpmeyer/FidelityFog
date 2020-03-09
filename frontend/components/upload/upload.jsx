@@ -31,7 +31,7 @@ class Upload extends React.Component {
     track.append("track[track_file]", this.state.track_file)
     track.append("track[album_art]", this.state.album_art)
     this.props.createTrack(track).then(
-      track => this.props.history.push(`/tracks/${track.id}`)
+      track => this.props.history.push(`/`)
     )
   }
 
@@ -40,49 +40,106 @@ class Upload extends React.Component {
   }
 
   handlArtwork(e) {
-    this.setState({ album_art: e.currentTarget.files[0] })
+    const file = e.currentTarget.files[0]
+    const fileReader = new FileReader()
+    fileReader.onloadend = () => {
+      this.setState({ album_art: file, photoURL: fileReader.result })
+    }
+    if (file) {
+      fileReader.readAsDataURL(file)
+    }
   }
 
+
   render() {
-    return (
+
+    const preUpload = (
       <div className="user upload-content">
-        <form className="upload-form" onSubmit={this.handleSubmit}>
-          <h1>Upload your track</h1>
-          <label>Title
-            <br/>
-            <input 
-              type="text"
-              value={this.state.title}
-              onChange={this.handleChange("title")}
-            />
+        <div className="pre-form-container">
+          <div className="upload-greeting">
+            Upload your tracks here
+          </div>
+          <input 
+            type="file" 
+            id="file" 
+            className="pre-upload-input" 
+            onChange={this.handleTrack}/>
+          <label className="pre-upload-label" htmlFor="file">
+            choose a file to upload
           </label>
-          <label>Description 
-            <br/>
-            <input 
-            type="text"
-            value={this.state.description}
-            onChange={this.handleChange("description")} />
-          </label>
-          <label>Track file
-            <br/>
-            <input 
-              className="file-input" 
-              type="file"
-              onChange={this.handleTrack}
-            />
-          </label>
-          <label>Track artwork
-            <br />
-            <input
-              className="file-input"
-              type="file"
-              onChange={this.handlArtwork}
-            />
-          </label>
-          <button>Click to upload</button>
-        </form>
+          <div className="small-messages">
+            <div className="small">
+              Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.
+            </div>
+            <div className="vsmall">
+              Or just MP3s if you hate us and yourself.
+            </div>
+          </div>
+        </div>
       </div>
     )
+
+    const errorList = this.props.errors.map((error, i) => (
+      <li key={`error-${i}`}>
+        {error}
+      </li>
+    ))
+
+    let previewClass
+    let preview
+    if (this.state.photoURL) {
+      preview = (
+        <img src={this.state.photoURL} />
+      )
+      previewClass = "album-preview"
+    } else {
+      preview = (<><li>album</li> <li>art</li> <li>preview</li></>)
+      previewClass = ("album-preview-empty")
+    }
+
+    if (this.state.track_file === null) {
+      return preUpload
+    } else {
+      return (
+        <div className="user upload-content">
+          <div className="form-container">
+            <div className={previewClass}>
+              {preview}
+            </div>
+            <form className="upload-form" onSubmit={this.handleSubmit}>
+              <div className="error-list">
+                {errorList}
+              </div>
+              <h1>Upload your track</h1>
+              <label>Title
+                <br/>
+                <input 
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.handleChange("title")}
+                />
+              </label>
+              <label>Description 
+                <br/>
+                <input 
+                type="text"
+                value={this.state.description}
+                onChange={this.handleChange("description")} />
+              </label>
+              <label>Track artwork
+                <br />
+                <input
+                  className="file-input"
+                  type="file"
+                  onChange={this.handlArtwork}
+                />
+              </label>
+              <button>Click to upload</button>
+            </form>
+          </div>
+        </div>
+      )
+    }
   }
 }
 

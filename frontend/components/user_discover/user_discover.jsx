@@ -1,6 +1,7 @@
 import React from 'react'
 import UserNavBarContainer from '../nav_bar/user_nav_bar_container'
 import IndexContainer from './index_container'
+import DiscoverTracksContainer from './discover_tracks_container'
 
 class UserDiscover extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class UserDiscover extends React.Component {
     } else {
       return (
         <div className="user">
-          <IndexContainer />
+          <DiscoverTracksContainer />
           
         </div>
       )

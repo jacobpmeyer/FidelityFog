@@ -40,7 +40,9 @@ class IndexItem extends React.Component {
     return(
       <div className="track-index-item">
         <div className="index-album-artwork">
-          <img src={track.albumArt} />
+          <Link to={`/tracks/${track.id}`} >
+            <img src={track.albumArt} />
+          </Link>
         </div>
         <div className="track-details">
           <div className={logo} onClick={this.handlePlay()}>

@@ -3,7 +3,8 @@ import Upload from './upload'
 import { createTrack } from '../../actions/track_actions'
 
 const mSTP = state => ({
-  currentUser: state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id],
+  errors: state.errors.track
 })
 
 const mDTP = dispatch => ({
