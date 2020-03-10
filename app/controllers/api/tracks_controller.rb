@@ -8,7 +8,7 @@ class Api::TracksController < ApplicationController
     shuffle = track_arr.shuffle
     slice = [first].concat(shuffle).take(3)
     # change this for production
-    @tracks = slice
+    @tracks = shuffle
     render :index
   end
 

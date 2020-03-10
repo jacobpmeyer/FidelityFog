@@ -61,7 +61,7 @@ class DiscoverTrackItem extends React.Component {
           <div className="discover-item">
             <Link
               to={`/tracks/${track.id}`}
-              className="discover-art" 
+              className="discover-art shadow" 
               onMouseEnter={this.handleEnter} 
               onMouseLeave={this.handleLeave}
             >

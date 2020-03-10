@@ -90,20 +90,21 @@ class TrackShow extends React.Component {
                   </li>
                 </ul>
               </div>
+              <div className="track-show-description-container">
+                <div className="track-show-description">
+                  {track.description}
+                </div>
+              </div>
               <div className="show-buttons">
-                
                   {deleteButton}
-                
-                
                   {editButton}
-                
               </div>
             </div>
             <div className="album-art">
               <img src={track.albumArt} alt={`${track.title} album art`}/>
             </div>
+            <audio src={track.trackFile} ref={this.ref} />
           </div>
-          <audio src={track.trackFile} ref={this.ref} />
         </div>
       )
     }
