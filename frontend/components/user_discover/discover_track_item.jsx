@@ -48,6 +48,13 @@ class DiscoverTrackItem extends React.Component {
       button = <img src={window.play} alt="play button" />
     }
 
+    let art
+    if (track.albumArt) {
+      art = <img src={track.albumArt} alt={`${track.title} album art`} />
+    } else {
+      art = null
+    }
+
     return (
       <div className="discover-item">
       
@@ -57,7 +64,7 @@ class DiscoverTrackItem extends React.Component {
           onMouseEnter={this.handleEnter} 
           onMouseLeave={this.handleLeave}
         >
-          <img src={track.albumArt} alt={`${track.title} album art`}/>
+          {art}
         </Link>
         <div className="discover-buttons" onClick={this.handlePlay()}>
           <div className={logo}>

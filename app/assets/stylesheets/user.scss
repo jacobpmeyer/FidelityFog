@@ -168,7 +168,7 @@
 }
 
 .big {
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .discover-item {
@@ -185,6 +185,8 @@
   position: absolute;
   width: 173px;
   height: 173px;
+  background-image: image-url('noart.png');
+  background-size: contain;
 }
 
 .discover-buttons {

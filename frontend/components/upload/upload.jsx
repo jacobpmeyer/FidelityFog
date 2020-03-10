@@ -29,7 +29,9 @@ class Upload extends React.Component {
     track.append("track[artist_id]", this.state.artist_id)
     track.append("track[description]", this.state.description)
     track.append("track[track_file]", this.state.track_file)
-    track.append("track[album_art]", this.state.album_art)
+    if (this.state.album_art) {
+      track.append("track[album_art]", this.state.album_art)
+    }
     this.props.createTrack(track).then(
       track => this.props.history.push(`/`)
     )
@@ -42,6 +44,7 @@ class Upload extends React.Component {
   handlArtwork(e) {
     const file = e.currentTarget.files[0]
     const fileReader = new FileReader()
+    console.log(file, fileReader)
     fileReader.onloadend = () => {
       this.setState({ album_art: file, photoURL: fileReader.result })
     }
@@ -107,7 +110,7 @@ class Upload extends React.Component {
               {preview}
             </div>
             <form className="upload-form" onSubmit={this.handleSubmit}>
-              <div className="error-list">
+              <div className="error-list big">
                 {errorList}
               </div>
               <h1>Upload your track</h1>
