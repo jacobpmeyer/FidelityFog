@@ -5,10 +5,13 @@ class DiscoverTrackItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      playing: false
+      playing: false,
+      isMouseInside: false
     }
     this.ref = React.createRef()
     this.handlePlay = this.handlePlay.bind(this)
+    this.handleEnter = this.handleEnter.bind(this)
+    this.handleLeave = this.handleLeave.bind(this)
   }
 
   handlePlay() {
@@ -25,24 +28,38 @@ class DiscoverTrackItem extends React.Component {
     }
   }
 
+  handleEnter() {
+    this.setState({ isMouseInside: true })
+  }
+
+  handleLeave() {
+    this.setState({ isMouseInside: false })
+  }
+
   render() {
     const { track } = this.props
     let logo
     let button
     if (this.state.playing) {
-      logo = "pause-button z1000"
+      logo = "pause-button"
       button = <img src={window.pause} alt="pause button" />
     } else {
-      logo = "play-button z1000"
+      logo = "play-button"
       button = <img src={window.play} alt="play button" />
     }
 
     return (
-      <div className="discover-item" onClick={this.handlePlay()} >
-        <div className="discover-art">
+      <div className="discover-item">
+      
+        <Link
+          to={`/tracks/${track.id}`}
+          className="discover-art" 
+          onMouseEnter={this.handleEnter} 
+          onMouseLeave={this.handleLeave}
+        >
           <img src={track.albumArt} alt={`${track.title} album art`}/>
-        </div>
-        <div className="discover-buttons z1000">
+        </Link>
+        <div className="discover-buttons" onClick={this.handlePlay()}>
           <div className={logo}>
             {button}
           </div>

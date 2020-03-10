@@ -2,13 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   width: 55px;
   height: 55px;
   border: 1px solid #f50;
   border-radius: 50%;
   background-color: #f50;
-  margin-right: 10px;
   img {
     width: 28px;
     color: white;
@@ -21,13 +19,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   width: 55px;
   height: 55px;
   border: 1px solid #f50;
   border-radius: 50%;
   background-color: #f50;
-  margin-right: 10px;
   img {
     width: 28px;
     color: white;
@@ -93,6 +89,9 @@
   justify-content: flex-start;
   align-items: space-between;
   padding: 30px;
+  ul {
+    margin-left: 12px;
+  }
 }
 
 .artist-link-show {

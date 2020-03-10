@@ -172,6 +172,9 @@
 }
 
 .discover-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 173px;
   height: 173px;
   margin-right: 20px;
@@ -182,30 +185,22 @@
   position: absolute;
   width: 173px;
   height: 173px;
-  z-index: 2000;
-  &:hover {
-    z-index: 0;
-  }
-
-  img:hover {
-    z-index: 0;
-  }
 }
 
 .discover-buttons {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.discover-item:hover .discover-buttons {
+  display: flex;
 }
 
 .discover-list {
   display: flex;
-  
-}
-
-.z1000 {
-  z-index: 1000;
 }

@@ -2,10 +2,13 @@ class Api::TracksController < ApplicationController
 
   def index
     all_tracks = Track.all
-    shuffle = all_tracks.shuffle
     #################
-    @tracks = Track.all[0..1]
+    track_arr = Array.new(all_tracks)
+    first = Track.find(37)
+    shuffle = track_arr.shuffle
+    slice = [first].concat(shuffle).take(3)
     # change this for production
+    @tracks = slice
     render :index
   end
 
