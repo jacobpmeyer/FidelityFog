@@ -68,6 +68,21 @@ class TrackShow extends React.Component {
       editButton = null
     }
 
+    let trackD
+    if (track === undefined) {
+      trackD = null
+    } else {
+      if (track.description) {
+        trackD = (
+          <div className="track-show-description">
+            {track.description}
+          </div>
+        )
+      } else {
+        trackD = null
+      }
+    }
+
     if (this.props.track === undefined) {
       return null
     } else {
@@ -91,9 +106,7 @@ class TrackShow extends React.Component {
                 </ul>
               </div>
               <div className="track-show-description-container">
-                <div className="track-show-description">
-                  {track.description}
-                </div>
+                {trackD}
               </div>
               <div className="show-buttons">
                   {deleteButton}
