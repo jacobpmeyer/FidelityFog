@@ -56,22 +56,28 @@ class DiscoverTrackItem extends React.Component {
     }
 
     return (
-      <div className="discover-item">
-      
-        <Link
-          to={`/tracks/${track.id}`}
-          className="discover-art" 
-          onMouseEnter={this.handleEnter} 
-          onMouseLeave={this.handleLeave}
-        >
-          {art}
-        </Link>
-        <div className="discover-buttons" onClick={this.handlePlay()}>
-          <div className={logo}>
-            {button}
+      <div className="discover-item-outer-container">
+        <div className="discover-track-details">
+          <div className="discover-item">
+            <Link
+              to={`/tracks/${track.id}`}
+              className="discover-art" 
+              onMouseEnter={this.handleEnter} 
+              onMouseLeave={this.handleLeave}
+            >
+              {art}
+            </Link>
+            <div className="discover-buttons" onClick={this.handlePlay()}>
+              <div className={logo}>
+                {button}
+              </div>
+            </div>
+            <audio src={track.trackFile} ref={this.ref} />
           </div>
+          <Link to={`/tracks/${track.id}`}>
+            {track.artistName} - {track.title} 
+          </Link>
         </div>
-        <audio src={track.trackFile} ref={this.ref} />
       </div>
     )
   }

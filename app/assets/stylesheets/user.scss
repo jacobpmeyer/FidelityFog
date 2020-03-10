@@ -205,4 +205,15 @@
 
 .discover-list {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.discover-track-details {
+  max-width: 173px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: normal;
+  line-height: 1.4;
+  padding-top: 5px;
 }
