@@ -19,8 +19,6 @@ class Api::TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
-    # if @track.album_art
-    debugger
 
     if @track.save
       render :show

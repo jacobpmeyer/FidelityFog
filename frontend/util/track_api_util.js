@@ -13,7 +13,6 @@ export const fetchTrack = (trackId) => (
 )
 
 export const createTrack = (track) => {
-  console.log(track)
   return $.ajax({
     url:`/api/tracks/`,
     method: 'POST',

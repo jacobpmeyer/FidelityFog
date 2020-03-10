@@ -38,7 +38,6 @@ class TrackShow extends React.Component {
 
   render() {
     const { track, currentUser } = this.props
-    console.log(track)
     let logo
     let button
     if (this.state.playing) {

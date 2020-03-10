@@ -44,7 +44,6 @@ class Upload extends React.Component {
   handlArtwork(e) {
     const file = e.currentTarget.files[0]
     const fileReader = new FileReader()
-    console.log(file, fileReader)
     fileReader.onloadend = () => {
       this.setState({ album_art: file, photoURL: fileReader.result })
     }
