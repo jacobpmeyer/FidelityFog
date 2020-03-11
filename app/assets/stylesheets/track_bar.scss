@@ -56,3 +56,43 @@
 .bar-repeat-before {
 //  background-image: image_url("track_bar_repeat_after");
 }
+
+.track-bar-details {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 344px;
+  padding: 0 8px;
+  height: 100%;
+}
+
+.track-bar-art {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding-right: 8px;
+}
+
+.track-bar-name-title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 248;
+  height: 30px;
+  font-size: 11px;
+}
+
+.track-bar-name {
+  color: #999;
+}
+
+.track-bar-title {
+  color: #666;
+}
+
+.track-bar-title:hover, .track-bar-name:hover {
+  color: black;
+  cursor: pointer;
+}

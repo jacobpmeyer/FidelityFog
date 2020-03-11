@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>FidelityFog</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,6 +21,8 @@
       window.track_bar_repeat_after = "<%= image_url('track_bar_repeat_after.svg') %>";
       window.track_bar_shuffle_before = "<%= image_url('track_bar_shuffle_before.svg') %>";
       window.track_bar_shuffle_after = "<%= image_url('track_bar_shuffle_after.svg') %>";
+      window.track_bar_volume = "<%= image_url('track_bar_volume.svg') %>";
+      window.noart = "<%= image_url('noart.png') %>";
     </script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Open+Sans|Righteous|Roboto&display=swap');

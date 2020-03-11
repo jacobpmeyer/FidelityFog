@@ -5,42 +5,44 @@ class DiscoverTrackItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      playing: false,
-      isMouseInside: false
+      playing: false
     }
     this.ref = React.createRef()
     this.handlePlay = this.handlePlay.bind(this)
-    this.handleEnter = this.handleEnter.bind(this)
-    this.handleLeave = this.handleLeave.bind(this)
   }
 
   handlePlay() {
-    if (this.state.playing) {
+    const currentTrack = this.props.currentTrack
+    if (currentTrack.playing && this.props.track.id === currentTrack.id) {
       return () => {
+        this.props.pauseTrack()
+        this.props.updateCurrentTrack(this.props.track)
         this.setState({ playing: false })
-        this.ref.current.pause()
+      }
+    } else if (currentTrack.playing) {
+      return () => {
+        this.props.pauseTrack()
+        this.props.updateCurrentTrack(this.props.track)
+        this.setState({ playing: true })
+        this.props.playTrack()
       }
     } else {
       return () => {
+        this.props.updateCurrentTrack(this.props.track)
+        this.props.playTrack()
         this.setState({ playing: true })
-        this.ref.current.play()
       }
     }
   }
 
-  handleEnter() {
-    this.setState({ isMouseInside: true })
-  }
 
-  handleLeave() {
-    this.setState({ isMouseInside: false })
-  }
 
   render() {
     const { track } = this.props
+
     let logo
     let button
-    if (this.state.playing) {
+    if (this.props.currentTrack.playing && this.props.currentTrack.id === track.id) {
       logo = "pause-button"
       button = <img src={window.pause} alt="pause button" />
     } else {
@@ -61,9 +63,7 @@ class DiscoverTrackItem extends React.Component {
           <div className="discover-item">
             <Link
               to={`/tracks/${track.id}`}
-              className="discover-art shadow" 
-              onMouseEnter={this.handleEnter} 
-              onMouseLeave={this.handleLeave}
+              className="discover-art shadow"
             >
               {art}
             </Link>

@@ -17,15 +17,25 @@ class TrackShow extends React.Component {
   }
 
   handlePlay() {
-    if (this.state.playing) {
+    const currentTrack = this.props.currentTrack
+    if (currentTrack.playing && this.props.track.id === currentTrack.id) {
       return () => {
+        this.props.pauseTrack()
+        this.props.updateCurrentTrack(this.props.track)
         this.setState({ playing: false })
-        this.ref.current.pause()
+      }
+    } else if (currentTrack.playing) {
+      return () => {
+        this.props.pauseTrack()
+        this.props.updateCurrentTrack(this.props.track)
+        this.setState({ playing: true })
+        this.props.playTrack()
       }
     } else {
       return () => {
+        this.props.updateCurrentTrack(this.props.track)
+        this.props.playTrack()
         this.setState({ playing: true })
-        this.ref.current.play()
       }
     }
   }
@@ -40,11 +50,11 @@ class TrackShow extends React.Component {
     const { track, currentUser } = this.props
     let logo
     let button
-    if (this.state.playing) {
-      logo = "pause-button track-button-show"
+    if (this.props.currentTrack.playing && this.props.currentTrack.id === track.id) {
+      logo = "pause-button"
       button = <img src={window.pause} alt="pause button" />
     } else {
-      logo = "play-button track-button-show"
+      logo = "play-button"
       button = <img src={window.play} alt="play button" />
     }
 

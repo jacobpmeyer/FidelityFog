@@ -15,7 +15,6 @@ const App = () => {
     <div >
       <Modal />
       <ProtectedRoute path="/" component={UserNavBarContainer} />
-      <ProtectedRoute path="/" component={TrackBarContainer} />
       <Switch>
         <AuthRoute path="/splash" component={SplashContainer} />
         <ProtectedRoute path="/discover" component={UserDiscoverContainer} />
@@ -25,8 +24,7 @@ const App = () => {
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
       </Switch>
-
-
+      <ProtectedRoute path="/" component={TrackBarContainer} />
     </div>
   )
 }
