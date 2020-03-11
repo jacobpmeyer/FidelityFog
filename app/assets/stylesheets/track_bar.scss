@@ -1,0 +1,58 @@
+.track-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  min-width: 1180px;
+  height: 48px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #cecece;
+}
+
+.track-bar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1240px;
+}
+
+.track-bar-button {
+  margin-left: 12px;
+  width: 24px;
+  height: 100%;
+}
+
+.bar-previous {
+//  background-image: image_url("track_bar_previous");
+}
+
+.bar-play {
+//  background-image: image_url("track_bar_play");
+}
+
+.bar-pause {
+//  background-image: image_url("track_bar_pause");
+}
+
+.bar-next {
+//  background-image: image_url("track_bar_next");
+}
+
+.bar-shuffle-before {
+//  background-image: image_url("track_bar_shuffle_before");
+}
+
+.bar-shuffle-after {
+//  background-image: image_url("track_bar_shuffle_after");
+}
+
+.bar-repeat-before {
+//  background-image: image_url("track_bar_repeat_before");
+}
+
+.bar-repeat-before {
+//  background-image: image_url("track_bar_repeat_after");
+}
