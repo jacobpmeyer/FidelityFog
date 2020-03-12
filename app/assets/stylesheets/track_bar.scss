@@ -96,3 +96,24 @@
   color: black;
   cursor: pointer;
 }
+
+.track-bar-progress-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 632px;
+}
+
+.track-bar-progress {
+  width: 512px;
+}
+
+.start-time {
+  font-size: 11px;
+  color: #ff5500;
+}
+
+.end-time {
+  font-size: 11px;
+  color: #333333;
+}

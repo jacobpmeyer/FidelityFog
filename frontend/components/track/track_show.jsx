@@ -17,14 +17,14 @@ class TrackShow extends React.Component {
   }
 
   handlePlay() {
-    const currentTrack = this.props.currentTrack
-    if (currentTrack.playing && this.props.track.id === currentTrack.id) {
+    const { playing, currentTrack } = this.props
+    if (playing && this.props.track.id === currentTrack.id) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)
         this.setState({ playing: false })
       }
-    } else if (currentTrack.playing) {
+    } else if (playing) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)
@@ -47,10 +47,10 @@ class TrackShow extends React.Component {
   } 
 
   render() {
-    const { track, currentUser } = this.props
+    const { track, currentUser, playing, currentTrack } = this.props
     let logo
     let button
-    if (this.props.currentTrack.playing && this.props.currentTrack.id === track.id) {
+    if (playing && currentTrack.id === track.id) {
       logo = "pause-button"
       button = <img src={window.pause} alt="pause button" />
     } else {
@@ -60,7 +60,7 @@ class TrackShow extends React.Component {
 
     let deleteButton;
     let editButton;
-    const artistId = this.props.track ? track.artistId : null
+    const artistId = track ? track.artistId : null
     if (currentUser.id === artistId) {
       deleteButton = (
         <div className="delete-button">
@@ -92,7 +92,7 @@ class TrackShow extends React.Component {
       }
     }
 
-    if (this.props.track === undefined) {
+    if (track === undefined) {
       return null
     } else {
       return (
