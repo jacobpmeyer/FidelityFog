@@ -123,7 +123,6 @@ class TrackBar extends React.Component {
     const audio = this.ref.current
     if (audio.volume) {
       const percentage = Math.floor((e.nativeEvent.offsetY / -80) * 100) / 100 + 100 / 100
-      console.log(percentage)
       audio.volume = percentage
     }
   }
