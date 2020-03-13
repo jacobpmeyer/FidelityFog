@@ -5,14 +5,11 @@ import {
 
 const PlayingUiReducer = (state = null, action) => {
   Object.freeze(state)
-  let nextState = Object.assign({}, state)
   switch (action.type) {
     case PLAY_TRACK:
-      nextState = Object.assign({}, nextState, { playing: true })
-      return nextState
+      return true
     case PAUSE_TRACK:
-      nextState = Object.assign({}, nextState, { playing: false })
-      return nextState
+      return false
     default:
       return state
   }

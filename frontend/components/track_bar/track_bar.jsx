@@ -7,25 +7,57 @@ class TrackBar extends React.Component {
     this.handlePlay = this.handlePlay.bind(this)
     this.state = {
       startTime: "0:00",
-      endTime: null
+      endTime: "0:00",
+      audio: null,
+      width: 0,
+      volumeHeight: 0,
+      volumeModalOpen: false
     }
+    this.currentTime = this.currentTime.bind(this)
+    this.totalTime = this.totalTime.bind(this)
+    this.handleProgressClick = this.handleProgressClick.bind(this)
+    this.handleVolumeClick = this.handleVolumeClick.bind(this)
   }
 
   componentDidMount() {
-    // console.log(this.props.currentTrack)
+
   }
 
   componentDidUpdate() {
-    const currentTrack = this.props.currentTrack
-    if (currentTrack.playing) {
+    const { currentTrack, playing } = this.props
+    if (playing) {
       this.ref.current.play();
-    } else if (currentTrack.playing === false && currentTrack.id) {
+      const audio = this.ref.current
+      if (!this.interval) {
+        this.interval = setInterval(() => {
+          const percentage = (audio.currentTime / audio.duration) * 100
+          this.setState({
+            width: percentage,
+            startTime: this.currentTime(audio),
+            endTime: this.totalTime(audio)
+          })
+        }, 1000)
+      }
+    } else if (playing === false && currentTrack.id) {
       this.ref.current.pause()
+      if (this.interval) {
+        clearInterval(this.interval)
+        this.interval = null
+      }
+    } else {
+      if (this.interval) {
+        clearInterval(this.interval)
+        this.interval = null
+      }
     }
   }
 
+  componentWillUnmount() {
+    if (this.interval) clearInterval(this.interval)
+  }
+
   handlePlay() {
-    if (this.props.currentTrack.playing) {
+    if (this.props.playing) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)
@@ -40,21 +72,35 @@ class TrackBar extends React.Component {
     }
   }
 
-  totalTime() {
-    const audio = document.getElementById("audio")
-    console.log(audio)
-    const length = audio ? audio.duration : 0
+  totalTime(audio) {
+    let length
+    if (audio) {
+      length = audio.duration
+      this.length = audio.duration
+    } else {
+      length = 0
+      this.length = 0
+    }
     const minutes = Math.floor(length / 60)
     const seconds_str = (length - minutes * 60).toString()
     const seconds = seconds_str.substr(0, 2)
-    const time = minutes + ':' + seconds
+    const time = (
+      minutes + ":" + (
+        seconds < 10 ? "0" + seconds.substr(0) : seconds
+      )
+    )
     return time;
   }
 
-  currentTime() {
-    const audio = document.getElementById("audio")
-    console.log(audio)
-    const currentTime = audio ? audio.currentTime : 0
+  currentTime(audio) {
+    let currentTime
+    if (audio) {
+      currentTime = audio.currentTime
+      this.current = audio.currentTime
+    } else {
+      currentTime = 0
+      this.current = 0
+    }
     const current_minute = parseInt(currentTime / 60) % 60
     const current_seconds = (currentTime % 60).toFixed()
     const current_time = (
@@ -64,18 +110,33 @@ class TrackBar extends React.Component {
     )
     return current_time;
   }
+
+  handleProgressClick(e) {
+    const audio = this.ref.current
+    if (audio.duration) {
+      const percentage = Math.floor((e.nativeEvent.offsetX / 512) * 100)
+      audio.currentTime = (percentage / 100) * audio.duration
+    }
+  }
+
+  handleVolumeClick(e) {
+    const audio = this.ref.current
+    if (audio.volume) {
+      const percentage = Math.floor((e.nativeEvent.offsetY / -80) * 100) / 100 + 100 / 100
+      console.log(percentage)
+      audio.volume = percentage
+    }
+  }
   
   render() {
-    const { currentTrack } = this.props
+    const { currentTrack, playing } = this.props
+    const ref = this.ref.current
     let playButton
     let art
     let details = null
     let audio = null
-    let startTime
-    let endTime
     
-    if (this.props.currentTrack.playing) {
-      this.ref.play
+    if (playing) {
       playButton = (
         <button className="track-bar-button bar-pause" onClick={this.handlePlay()}>
           <img src={window.track_bar_pause} alt="pause button" />
@@ -89,7 +150,7 @@ class TrackBar extends React.Component {
       )
     }
 
-    if (currentTrack.albumArt) {
+    if (currentTrack) {
       audio = <audio id="audio" src={currentTrack.trackFile} ref={this.ref} />
       art = <img src={currentTrack.albumArt} />
       details = (
@@ -106,14 +167,20 @@ class TrackBar extends React.Component {
       art = <img src={window.noart} alt="no album selected" />
     }
 
-    if (audio) {
-      startTime = (this.currentTime())
-      endTime = (this.totalTime())
-    } else {
-      startTime = "0:00"
-      endTime = "0:00"
+    const progressBarWidth = {
+      width: `${this.state.width}%`
     }
 
+    let volumeHeight
+    if (ref) {
+      volumeHeight = {
+        height: `${ref.volume * 100}%`
+      }
+    } else {
+      volumeHeight = {
+        height: 0
+      }
+    }
 
     return (
       <div className="track-bar-container">
@@ -133,15 +200,35 @@ class TrackBar extends React.Component {
           </button>
           <div className="track-bar-progress-container">
             <div className="start-time">
-              {startTime}
+              {this.state.startTime}
             </div>
-            <progress className="track-bar-progress" value="0" max="1"></progress>
+            <div className="track-bar-progress-outer" onClick={this.handleProgressClick}>
+              <div id="track-bar-progress-middle">
+                <div className="track-bar-progress-inner" style={progressBarWidth}>
+                  &nbsp;
+                </div>
+              </div>
+            </div>
             <div className="end-time">
-              {endTime}
+              {this.state.endTime}
             </div>
           </div>
-          <button className="track-bar-button bar-volume">
+          <button 
+            className="track-bar-button bar-volume" 
+
+            >
             <img src={window.track_bar_volume} alt="volume button" />
+            <div className="modal-container">
+              <div className="track-bar-volume">
+                <div 
+                  className="track-bar-volume-middle" 
+                  onClick={this.handleVolumeClick}>
+                  <div className="track-bar-volume-inner" style={volumeHeight}>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </button>
           <div className="track-bar-details">
             <div className="track-bar-art">

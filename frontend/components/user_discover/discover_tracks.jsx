@@ -6,6 +6,7 @@ import DiscoverTrackItemContainer from './discover_track_item_container'
 class DiscoverTracks extends React.Component {
   constructor(props) {
     super(props)
+    // this.shuffled = null
   }
 
   render() {

@@ -6,9 +6,10 @@ import {
   playTrack
 } from '../../actions/track_ui_actions'
 
-const mSTP = (state, ownProps) => {
+const mSTP = ({ ui }) => {
   return {
-    currentTrack: state.ui.currentTrack
+    currentTrack: ui.currentTrack,
+    playing: ui.playing
   }
 }
 

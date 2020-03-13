@@ -17,8 +17,8 @@ class TrackShow extends React.Component {
   }
 
   handlePlay() {
-    const { playing, currentTrack } = this.props
-    if (playing && this.props.track.id === currentTrack.id) {
+    const { playing, currentTrack, track } = this.props
+    if (playing && track.id === currentTrack.id) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)

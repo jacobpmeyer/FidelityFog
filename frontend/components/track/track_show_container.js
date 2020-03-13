@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
     currentUser: state.entities.users[state.session.id],
     track: state.entities.tracks[ownProps.match.params.trackId],
     currentTrack: state.ui.currentTrack,
-    playing: state.ui.playing
+    playing: state.ui.playing,
   }
 }
 

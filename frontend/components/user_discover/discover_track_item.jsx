@@ -12,14 +12,14 @@ class DiscoverTrackItem extends React.Component {
   }
 
   handlePlay() {
-    const currentTrack = this.props.currentTrack
-    if (currentTrack.playing && this.props.track.id === currentTrack.id) {
+    const { playing, currentTrack, track } = this.props
+    if (playing && track.id === currentTrack.id) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)
         this.setState({ playing: false })
       }
-    } else if (currentTrack.playing) {
+    } else if (playing) {
       return () => {
         this.props.pauseTrack()
         this.props.updateCurrentTrack(this.props.track)
@@ -38,11 +38,11 @@ class DiscoverTrackItem extends React.Component {
 
 
   render() {
-    const { track } = this.props
+    const { track, currentTrack, playing } = this.props
 
     let logo
     let button
-    if (this.props.currentTrack.playing && this.props.currentTrack.id === track.id) {
+    if (playing && currentTrack.id === track.id) {
       logo = "pause-button"
       button = <img src={window.pause} alt="pause button" />
     } else {

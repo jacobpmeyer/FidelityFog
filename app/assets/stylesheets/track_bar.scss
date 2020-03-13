@@ -13,48 +13,11 @@
 }
 
 .track-bar-controls {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 1240px;
-}
-
-.track-bar-button {
-  margin-left: 12px;
-  width: 24px;
-  height: 100%;
-}
-
-.bar-previous {
-//  background-image: image_url("track_bar_previous");
-}
-
-.bar-play {
-//  background-image: image_url("track_bar_play");
-}
-
-.bar-pause {
-//  background-image: image_url("track_bar_pause");
-}
-
-.bar-next {
-//  background-image: image_url("track_bar_next");
-}
-
-.bar-shuffle-before {
-//  background-image: image_url("track_bar_shuffle_before");
-}
-
-.bar-shuffle-after {
-//  background-image: image_url("track_bar_shuffle_after");
-}
-
-.bar-repeat-before {
-//  background-image: image_url("track_bar_repeat_before");
-}
-
-.bar-repeat-before {
-//  background-image: image_url("track_bar_repeat_after");
 }
 
 .track-bar-details {
@@ -72,7 +35,9 @@
   align-items: center;
   width: 30px;
   height: 30px;
-  padding-right: 8px;
+  margin-right: 8px;
+  background-image: image_url("noart.png");
+  background-size: contain;
 }
 
 .track-bar-name-title {
@@ -104,8 +69,14 @@
   width: 632px;
 }
 
-.track-bar-progress {
-  width: 512px;
+
+
+#track-bar-progress-middle {
+  width: 100%;
+  background-color: #ccc;
+  height: 1px;
+  margin: 5px 10px 5px;
+  
 }
 
 .start-time {
@@ -116,4 +87,64 @@
 .end-time {
   font-size: 11px;
   color: #333333;
+}
+
+.track-bar-progress-inner {
+  background-color: #ff5500;
+  height: 100%;
+}
+
+.track-bar-progress-outer {
+  width: 512px;
+  height: 50%;
+  display: flex;
+}
+
+.bar-volume {
+  margin-right: 10px;
+}
+
+.bar-volume:hover .track-bar-volume {
+  display: flex;
+}
+
+.track-bar-volume {
+  display: none;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 100px;
+  width: 30px;
+  background-color: #f2f2f2;
+  bottom: 125px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  right: 3px;
+  border: 1px solid #cecece;
+}
+
+.track-bar-button {
+  margin-left: 12px;
+  width: 24px;
+  height: 100%;
+}
+
+.modal-container {
+  width: 0;
+  height: 0;
+}
+
+.track-bar-volume-middle {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+  margin: 10px;
+}
+
+.track-bar-volume-inner {
+  background-color: #ff5500;
+  width: 100%;
+  z-index: 5000;
 }
