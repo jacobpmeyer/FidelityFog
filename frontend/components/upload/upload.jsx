@@ -10,11 +10,13 @@ class Upload extends React.Component {
       title: "",
       description: "",
       track_file: null,
-      album_art: null
+      album_art: null,
+      buttonContents: "Click to upload",
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleTrack = this.handleTrack.bind(this)
     this.handlArtwork = this.handlArtwork.bind(this)
+    this.handleButton = this.handleButton.bind(this)
   }
 
   handleChange(field) {
@@ -32,8 +34,9 @@ class Upload extends React.Component {
     if (this.state.album_art) {
       track.append("track[album_art]", this.state.album_art)
     }
-    this.props.createTrack(track).then(
-      track => this.props.history.push(`/`)
+    this.props.createTrack(track).then((track) => {
+      return this.props.history.push(`/tracks/${track.track.id}`)
+    }
     )
   }
 
@@ -50,6 +53,10 @@ class Upload extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file)
     }
+  }
+
+  handleButton(e) {
+      this.setState({ buttonContents: <img src={window.loadingSpinner} /> })
   }
 
 
@@ -136,7 +143,7 @@ class Upload extends React.Component {
                   onChange={this.handlArtwork}
                 />
               </label>
-              <button>Click to upload</button>
+              <button onClick={this.handleButton}>{this.state.buttonContents}</button>
             </form>
           </div>
         </div>
