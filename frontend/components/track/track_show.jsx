@@ -6,7 +6,7 @@ class TrackShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: false
+      playing: false,
     };
     this.ref = React.createRef();
     this.handlePlay = this.handlePlay.bind(this);
@@ -124,9 +124,9 @@ class TrackShow extends React.Component {
             </div>
             <audio src={track.trackFile} ref={this.ref} />
           </div>
-          <div id="waveform">
+          {/* <div id="waveform">
             <WaveformContainer track={track} />
-          </div>
+          </div> */}
         </div>
       );
     }
