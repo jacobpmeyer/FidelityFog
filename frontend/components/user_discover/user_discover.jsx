@@ -7,8 +7,10 @@ class UserDiscover extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.tracks.length === 0) {
-      this.props.fetchAllTracks();
+    const { tracks, fetchTrack } = this.props;
+    if (tracks.length === 0) {
+      fetchTrack("1");
+      fetchTrack("2");
     }
   }
 

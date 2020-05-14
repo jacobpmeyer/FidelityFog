@@ -1,16 +1,17 @@
-import { connect } from 'react-redux'
-import UserDiscover from './user_discover'
-import { fetchAllTracks } from '../../actions/track_actions'
+import { connect } from "react-redux";
+import UserDiscover from "./user_discover";
+import { fetchAllTracks, fetchTrack } from "../../actions/track_actions";
 
-const mSTP = state => {
+const mSTP = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    tracks: Object.values(state.entities.tracks)
-  }
-}
+    tracks: Object.values(state.entities.tracks),
+  };
+};
 
-const mDTP = dispatch => ({
-  fetchAllTracks: () => dispatch(fetchAllTracks())
-})
+const mDTP = (dispatch) => ({
+  fetchAllTracks: () => dispatch(fetchAllTracks()),
+  fetchTrack: (id) => dispatch(fetchTrack(id)),
+});
 
-export default connect(mSTP, mDTP)(UserDiscover)
+export default connect(mSTP, mDTP)(UserDiscover);

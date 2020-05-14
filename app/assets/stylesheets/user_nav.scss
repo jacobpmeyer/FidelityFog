@@ -10,6 +10,12 @@
   height: 46px;
   background-color: #333333;
   color: #ccc;
+  li {
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
 .user-nav-items {
