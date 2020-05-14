@@ -4,13 +4,19 @@ body{
   background-color: #f2f2f2;
 }
 
+.global {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
 .main-content {
-  background-image: image_url("splash_banner.jpg");
-  background-repeat: no-repeat;
-  background-size: contain, cover;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   border-top:4px solid #f50;
   background-color: white;
   width: 1240px;
-  margin: auto;
-  height: 1000px;
+  color: #333;
+  font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
 }

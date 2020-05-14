@@ -1,14 +1,13 @@
-import { connect } from 'react-redux'
-import Splash from './splash'
+import { connect } from "react-redux";
+import Splash from "./splash";
+import { openModal } from "../../actions/modal_actions";
 
-const mSTP = state => ({
+const mSTP = (state) => ({});
 
-})
+const mDTP = (dispatch) => ({
+  openModal: (field) => dispatch(openModal(field)),
+});
 
-const mDTP = dispatch => ({
+const SplashContainer = connect(mSTP, mDTP)(Splash);
 
-})
-
-const SplashContainer = connect(mSTP, mDTP)(Splash)
-
-export default SplashContainer
+export default SplashContainer;

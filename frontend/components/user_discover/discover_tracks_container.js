@@ -1,15 +1,12 @@
-import { connect } from 'react-redux'
-import Index from './index'
-import DiscoverTracks from './discover_tracks'
-import { updateCurrentTrack } from '../../actions/track_ui_actions'
+import { connect } from "react-redux";
+import Index from "../index/index";
+import DiscoverTracks from "./discover_tracks";
+import { updateCurrentTrack } from "../../actions/track_ui_actions";
 
-const mSTP = state => ({
-  tracks: Object.values(state.entities.tracks)
-})
+const mSTP = (state) => ({});
 
-const mDTP = dispatch => ({
-  updateCurrentTrack: track => dispatch(updateCurrentTrack(track)),
-  
-})
+const mDTP = (dispatch) => ({
+  updateCurrentTrack: (track) => dispatch(updateCurrentTrack(track)),
+});
 
-export default connect(mSTP, mDTP)(DiscoverTracks)
+export default connect(mSTP, mDTP)(DiscoverTracks);
