@@ -11,6 +11,11 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :artist_id
 
+  has_many :comments,
+    class_name: :Comment,
+    primary_key: :id,
+    foreign_key: :user_id
+
   has_one_attached :avatar
 
   def password=(password)

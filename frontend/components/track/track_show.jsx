@@ -15,6 +15,7 @@ class TrackShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchTrack(this.props.match.params.trackId);
+    window.scrollTo(0, 0);
   }
 
   handlePlay() {
