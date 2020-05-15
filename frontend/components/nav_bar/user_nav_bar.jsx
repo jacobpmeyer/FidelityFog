@@ -1,16 +1,16 @@
-import React from 'react'
-import NavBarLoggedIn from './nav_bar_logged_in'
-import NavBarLoggedOut from './nav_bar_logged_out'
-import { Link } from 'react-router-dom'
+import React from "react";
+import NavBarLoggedIn from "./nav_bar_logged_in";
+import NavBarLoggedOut from "./nav_bar_logged_out";
+import { Link } from "react-router-dom";
 
 class UserNavBar extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleLogout = this.handleLogout.bind(this)
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout() {
-    this.props.logout()
+    this.props.logout();
   }
 
   render() {
@@ -24,27 +24,24 @@ class UserNavBar extends React.Component {
           </Link>
           <ul className="nav-left">
             <Link to="/discover">
-              <li>
-                Home
-              </li>
+              <li>Home</li>
             </Link>
-            <li>
-              Stream
-            </li>
-            <li>
-              Library
-            </li>
+            <li>Stream</li>
+            <li>Library</li>
           </ul>
           <div className="nav-center">
-            <input type="search" name="search" id=""/>
+            <input type="search" name="search" id="" />
           </div>
           <div className="nav-right">
             <ul className="nav-right-buttons">
               <li>
-                <Link className="upload-link" to="/upload">Upload</Link>
+                <Link className="upload-link" to="/upload">
+                  Upload
+                </Link>
               </li>
               <li>
-                {this.props.currentUser.username}
+                {this.props.currentUser.displayName ||
+                  this.props.currentUser.username}
               </li>
               <li onClick={() => this.props.logout()} className="nav-logout">
                 Logout
@@ -53,9 +50,8 @@ class UserNavBar extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 }
 
-export default UserNavBar
+export default UserNavBar;
