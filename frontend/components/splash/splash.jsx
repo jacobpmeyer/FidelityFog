@@ -117,7 +117,10 @@ class Splash extends React.Component {
                 <i className="fab fa-linkedin creator-link"></i>
               </a>
               <a href={`https://angel.co/u/jacobpmeyer`}>
-                <i class="fab fa-angellist creator-link" alt="angel list"></i>
+                <i
+                  className="fab fa-angellist creator-link"
+                  alt="angel list"
+                ></i>
               </a>
               <a href={`https://jacobmeyer.dev`}>
                 <i className="fas fa-portrait creator-link" alt="portfolio"></i>

@@ -1,9 +1,7 @@
 class Api::TracksController < ApplicationController
 
   def index
-    all_tracks = Track.all
-    track_arr = Array.new(all_tracks)
-    @tracks = track_arr.shuffle
+    @tracks = Track.all
     
     render :index
   end

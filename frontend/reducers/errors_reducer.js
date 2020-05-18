@@ -1,11 +1,13 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import SessionErrorsReducer from './session_errors_reducer';
-import TrackErrorsReducer from './track_errors_reducer';
+import SessionErrorsReducer from "./session_errors_reducer";
+import TrackErrorsReducer from "./track_errors_reducer";
+import CommentErrorsReducer from "./comment_errors_reducer";
 
 const ErrorsReducer = combineReducers({
   session: SessionErrorsReducer,
-  track: TrackErrorsReducer
-})
+  track: TrackErrorsReducer,
+  comments: CommentErrorsReducer,
+});
 
-export default ErrorsReducer
+export default ErrorsReducer;

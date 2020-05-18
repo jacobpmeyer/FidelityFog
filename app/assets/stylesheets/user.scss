@@ -72,13 +72,15 @@
 
 .user-show {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
   font-family: 'Roboto', sans-serif;
   width: 1240px;
   padding-top: 46px;
   background-color: white;
   margin: 0 auto;
   min-height: 800px;
+  margin-bottom: 49px;
 }
 
 .album-preview {
