@@ -50,16 +50,33 @@
 
 .comments-list {
   margin-top: 20px;
+  width: 100%;
 }
 
-.comment-item {
+.comment {
   display: flex;
   width: 100%;
   height: 40px;
   padding: 10px 10px 10px 0;
+  font-size: 12px;
 }
 
-.comment-item-avatar {
+.comment-avatar {
   height: 40px;
   width: 40px;
+  background-image: linear-gradient(135deg,#846170,#e6846e);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.comment-username, .comment-meta {
+  color: #999;
 }
