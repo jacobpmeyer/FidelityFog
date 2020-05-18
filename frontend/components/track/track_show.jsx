@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import WaveformContainer from "../waveform/waveform_container";
+import Comments from "../comments/CommentsContainer";
 
 class TrackShow extends React.Component {
   constructor(props) {
@@ -125,9 +126,7 @@ class TrackShow extends React.Component {
             </div>
             <audio src={track.trackFile} ref={this.ref} />
           </div>
-          {/* <div id="waveform">
-            <WaveformContainer track={track} />
-          </div> */}
+          <Comments trackId={track.id} />
         </div>
       );
     }

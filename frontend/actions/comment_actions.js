@@ -2,7 +2,7 @@ import * as commentApiUtil from "../util/comment_api_util";
 
 export const RECEIVE_TRACK_COMMENTS = "RECEIVE_TRACK_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
-export const RECEIVE_TRACK_ERRORS = "RECEIVE_TRACK_ERRORS";
+export const RECEIVE_COMMENT_ERRORS = "RECEIVE_TRACK_ERRORS";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const removeComment = (commentId) => ({
