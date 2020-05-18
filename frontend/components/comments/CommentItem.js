@@ -12,8 +12,6 @@ const CommentItem = ({ comment }) => {
 
   if (isNaN(daysAgo)) daysAgo = 0;
 
-  console.log(avatar);
-
   return (
     <div className="comment">
       <div className="comment-avatar">{avatar}</div>

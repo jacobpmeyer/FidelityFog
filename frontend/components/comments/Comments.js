@@ -12,8 +12,10 @@ export default ({
   const [cmt, setCmt] = useState(null);
 
   useEffect(() => {
-    if (!comments.length) {
-      fetchTrackComments(trackId);
+    if (!cmt) {
+      fetchTrackComments(trackId).then((res) => {
+        setCmt(res.comments);
+      });
     }
   });
 
