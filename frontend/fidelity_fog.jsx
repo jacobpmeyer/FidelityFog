@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import configureStore from './store/store'
-import Root from './components/root'
+import React from "react";
+import ReactDOM from "react-dom";
+import configureStore from "./store/store";
+import Root from "./components/root";
+import { fetchTrackComments } from "./util/comment_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root")
+  const root = document.getElementById("root");
   let store;
   if (window.currentUser) {
     const preloadedState = {
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: { [window.currentUser.id]: window.currentUser },
       },
-      session: { id: window.currentUser.id }
+      session: { id: window.currentUser.id },
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
@@ -19,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.dispatch = store.dispatch
-  window.getState = store.getState
-  
-  ReactDOM.render(<Root store={store} />, root)
-})
+  window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.fetchTrackComments = fetchTrackComments;
 
+  ReactDOM.render(<Root store={store} />, root);
+});

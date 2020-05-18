@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default ({
   trackId,
@@ -8,6 +8,16 @@ export default ({
   createComment,
 }) => {
   const [body, setBody] = useState("");
+  const [cmt, setCmt] = useState(null);
+
+  useEffect(() => {
+    if (!cmt) {
+      console.log(trackId);
+      fetchTrackComments(trackId).then((res) => {
+        setCmt(res.comments);
+      });
+    }
+  }, [cmt]);
 
   const handleInput = (e) => {
     e.preventDefault();

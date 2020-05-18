@@ -25,9 +25,9 @@ const receiveCommentErrors = (errors) => ({
   errors,
 });
 
-export const fetchTrackComments = () => (dispatch) =>
-  trackApiUtil
-    .fetchTrackComments()
+export const fetchTrackComments = (trackId) => (dispatch) =>
+  commentApiUtil
+    .fetchTrackComments(trackId)
     .then((comments) => dispatch(recieveTrackComments(comments)));
 
 export const fetchComment = (comment) => (dispatch) =>
