@@ -7,7 +7,7 @@ import {
 
 const mSTP = (state, ownProps) => {
   return {
-    comments: state.entities.comments,
+    comments: Object.values(state.entities.comments),
     currentUser: state.entities.users[state.session.id],
   };
 };
