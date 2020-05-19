@@ -9,9 +9,10 @@ export default (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_TRACK_COMMENTS:
-      return Object.assign({}, nextState, action.comments);
+      return Object.assign({}, action.comments);
     case RECEIVE_COMMENT:
       nextState[action.comment.id] = action.comment;
+      return nextState;
     case REMOVE_COMMENT:
       delete nextState[action.commentId];
       return nextState;

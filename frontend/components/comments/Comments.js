@@ -9,9 +9,6 @@ export default ({
   createComment,
 }) => {
   const [body, setBody] = useState("");
-  const [cmt, setCmt] = useState(null);
-
-  console.log(currentUser.avatar);
 
   let avatar = null;
   if (currentUser.avatar) {
@@ -19,12 +16,8 @@ export default ({
   }
 
   useEffect(() => {
-    if (!cmt) {
-      fetchTrackComments(trackId).then((res) => {
-        setCmt(res.comments);
-      });
-    }
-  });
+    fetchTrackComments(trackId);
+  }, [trackId]);
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -38,7 +31,6 @@ export default ({
       body,
     };
     createComment(comment);
-    fetchTrackComments(trackId);
     setBody("");
   };
 

@@ -13,7 +13,7 @@ class UserDiscover extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     const { tracks, fetchTrack, fetchAllTracks } = this.props;
-    if (tracks.length === 0) {
+    if (tracks.length <= 1) {
       // fetchTrack("1");
       // fetchTrack("2");
       fetchAllTracks().then(() => {
