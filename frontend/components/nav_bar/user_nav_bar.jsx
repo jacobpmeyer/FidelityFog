@@ -27,8 +27,12 @@ class UserNavBar extends React.Component {
             <Link to="/discover">
               <li>Home</li>
             </Link>
-            <li>Stream</li>
-            <li>Library</li>
+            <a href="https://jacobmeyer.dev">
+              <li>Portfolio</li>
+            </a>
+            <a href="https://github.com/jacobpmeyer/FidelityFog">
+              <li>Github</li>
+            </a>
           </ul>
           <div className="nav-center">
             <SearchBar />

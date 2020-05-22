@@ -7,7 +7,6 @@ const SearchBar = ({ searchForTracks }) => {
 
   const submitSearch = (e) => {
     e.preventDefault();
-    console.log(searchString);
     setSearchString("");
     searchForTracks(searchString).then(history.push("/search"));
   };
