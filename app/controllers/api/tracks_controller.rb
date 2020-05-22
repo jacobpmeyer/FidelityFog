@@ -38,9 +38,31 @@ class Api::TracksController < ApplicationController
     @track.destroy
     render json: ["Track successfully deleted"]
   end
+
+  def search
+    request = params[:request].split(" ")
+    @results = []
+    users = []
+    request.each do |part|
+      users.concat(User.where("lower(display_name) LIKE '%#{part.downcase}%'"))
+      tracks = Track.where("lower(title) LIKE '%#{part.downcase}%'")
+
+      @results.concat(tracks)
+    end
+
+    users.each do |user|
+      @results.concat(user.tracks)
+    end
+
+    @results.uniq
+
+    render :search
+
+  end
+
   private 
   def track_params
     params.require(:track).permit(:title, :artist_name, :artist_id,
-      :description, :track_file, :album_art, :id)
+      :description, :track_file, :album_art, :id, :request)
   end
 end

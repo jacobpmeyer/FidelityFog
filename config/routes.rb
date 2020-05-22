@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
     resources :comments, only: [:create, :destroy]
+    get 'search', to: 'tracks#search'
   end
 
 end
