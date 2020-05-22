@@ -24,7 +24,7 @@ class UserNavBar extends React.Component {
             </div>
           </Link>
           <ul className="nav-left">
-            <Link to="/discover">
+            <Link className="nav-home" to="/discover">
               <li>Home</li>
             </Link>
             <a href="https://jacobmeyer.dev">
@@ -39,12 +39,12 @@ class UserNavBar extends React.Component {
           </div>
           <div className="nav-right">
             <ul className="nav-right-buttons">
-              <li>
+              <li className="nav-upload-button">
                 <Link className="upload-link" to="/upload">
                   Upload
                 </Link>
               </li>
-              <li>
+              <li className="nav-username">
                 {this.props.currentUser.displayName ||
                   this.props.currentUser.username}
               </li>
