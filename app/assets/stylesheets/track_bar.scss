@@ -147,8 +147,16 @@
 }
 
 @media only screen and (max-width: 1256px) {
+
+  .track-bar-container {
+    justify-content: flex-start;
+  }
   .track-bar-controls {
     justify-content: space-evenly;
+  }
+
+  .track-bar-progress-container {
+    width: 35%;
   }
 
   .main-content {
