@@ -7,7 +7,7 @@ const receiveSearchResults = (searchResults) => ({
   searchResults,
 });
 
-export const searchForTracks = (request) =>
+export const searchForTracks = (request) => (dispatch) =>
   searchApiUtil
     .searchForTracks(request)
     .then((searchResults) => dispatch(receiveSearchResults(searchResults)));

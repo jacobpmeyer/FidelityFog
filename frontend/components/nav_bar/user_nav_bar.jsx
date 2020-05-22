@@ -2,6 +2,7 @@ import React from "react";
 import NavBarLoggedIn from "./nav_bar_logged_in";
 import NavBarLoggedOut from "./nav_bar_logged_out";
 import { Link } from "react-router-dom";
+import SearchBar from "../search/SearchBarContainer";
 
 class UserNavBar extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class UserNavBar extends React.Component {
             <li>Library</li>
           </ul>
           <div className="nav-center">
-            <input type="search" name="search" id="" />
+            <SearchBar />
           </div>
           <div className="nav-right">
             <ul className="nav-right-buttons">

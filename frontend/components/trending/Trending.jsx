@@ -5,13 +5,13 @@ export default ({ fetchAllTracks, fetchTrack, tracks }) => {
   const [trackOrder, setTrackOrder] = useState(null);
 
   useEffect(() => {
-    // fetchTrack("1");
-    // fetchTrack("2");
-    if (!trackOrder) {
-      fetchAllTracks().then(() => {
-        setTrackOrder(shuffleTracks(tracks).slice(0, 12));
-      });
-    }
+    fetchTrack("1");
+    fetchTrack("2");
+    // if (!trackOrder) {
+    //   fetchAllTracks().then(() => {
+    //     setTrackOrder(shuffleTracks(tracks).slice(0, 12));
+    //   });
+    // }
   }, [tracks.length]); // Only re-run the effect if tracks.length changes
 
   const shuffleTracks = (tracks) => {

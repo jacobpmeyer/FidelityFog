@@ -1,0 +1,25 @@
+
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+
+.search-bar-form {
+  width: 100%;
+  font-size: inherit;
+}
+
+.search-modal {
+  position: absolute;
+  width: 100%;
+  height: 5rem
+}
+
+.sorry {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+  font-size: 1.5rem;
+}

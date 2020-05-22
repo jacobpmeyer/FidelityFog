@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 import { searchForTracks } from "./actions/search_actions";
+import { fetchTrack } from "./actions/track_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.getState = store.getState;
   window.searchForTracks = searchForTracks;
+  window.fetchTrack = fetchTrack;
 
   ReactDOM.render(<Root store={store} />, root);
 });

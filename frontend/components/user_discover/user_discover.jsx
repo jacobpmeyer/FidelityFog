@@ -14,12 +14,12 @@ class UserDiscover extends React.Component {
     window.scrollTo(0, 0);
     const { tracks, fetchTrack, fetchAllTracks } = this.props;
     if (tracks.length <= 1) {
-      // fetchTrack("1");
-      // fetchTrack("2");
-      fetchAllTracks().then(() => {
-        const { tracks } = this.props;
-        this.setState({ tracks: this.shuffleTracks(tracks) });
-      });
+      fetchTrack("1");
+      fetchTrack("2");
+      // fetchAllTracks().then(() => {
+      //   const { tracks } = this.props;
+      //   this.setState({ tracks: this.shuffleTracks(tracks) });
+      // });
     } else {
       this.setState({ tracks: this.shuffleTracks(tracks) });
     }

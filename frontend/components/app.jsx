@@ -9,6 +9,7 @@ import TrackShowContainer from "./track/track_show_container";
 import UserNavBarContainer from "./nav_bar/user_nav_bar_container";
 import EditContainer from "./edit/edit_container";
 import TrackBarContainer from "./track_bar/track_bar_container";
+import SearchResultsContainer from "./search/SearchResultsContainer";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <ProtectedRoute path="/" component={UserNavBarContainer} />
       <Switch>
         <AuthRoute path="/splash" component={SplashContainer} />
+        <ProtectedRoute path="/search" component={SearchResultsContainer} />
         <ProtectedRoute path="/discover" component={UserDiscoverContainer} />
         <ProtectedRoute path="/upload" component={UploadContainer} />
         <ProtectedRoute
