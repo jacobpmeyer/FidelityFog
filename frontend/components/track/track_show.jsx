@@ -64,7 +64,7 @@ class TrackShow extends React.Component {
     let deleteButton;
     let editButton;
     const artistId = track ? track.artistId : null;
-    if (currentUser.id === artistId) {
+    if (currentUser && currentUser.id === artistId) {
       deleteButton = (
         <div className="delete-button">
           <button onClick={this.handleDestroy}>Delete Track</button>

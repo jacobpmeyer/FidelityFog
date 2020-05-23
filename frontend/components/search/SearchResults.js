@@ -2,8 +2,6 @@ import React from "react";
 import DiscoverTracksContainer from "../user_discover/discover_tracks_container";
 
 const SearchResults = ({ searchResults }) => {
-  console.log("inside the search results");
-
   if (searchResults.length) {
     return (
       <div className="user">

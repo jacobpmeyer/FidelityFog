@@ -5,8 +5,6 @@ export default ({ fetchAllTracks, fetchTrack, tracks }) => {
   const [trackOrder, setTrackOrder] = useState(null);
 
   useEffect(() => {
-    // fetchTrack("1");
-    // fetchTrack("2");
     if (!trackOrder) {
       fetchAllTracks().then(() => {
         setTrackOrder(shuffleTracks(tracks).slice(0, 12));
@@ -27,6 +25,6 @@ export default ({ fetchAllTracks, fetchTrack, tracks }) => {
   if (trackOrder === null) {
     return null;
   } else {
-    return <DiscoverTracksContainer tracks={trackOrder} />;
+    return <DiscoverTracksContainer noTrackShow={true} tracks={trackOrder} />;
   }
 };
