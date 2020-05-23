@@ -44,6 +44,16 @@ class Api::TracksController < ApplicationController
     @results = []
     users = []
     request.each do |part|
+      if part === "shmoopy"
+        ids = [4, 6, 8, 11, 13, 14]
+
+        @results = ids.map do |the_id|
+          Track.find(the_id)
+        end
+        render :search
+        return
+      end
+
       users.concat(User.where("lower(display_name) LIKE '%#{part.downcase}%'"))
       tracks = Track.where("lower(title) LIKE '%#{part.downcase}%'")
 
