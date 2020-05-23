@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TrackBar extends React.Component {
   constructor(props) {
@@ -196,7 +197,9 @@ class TrackBar extends React.Component {
       details = (
         <div className="track-bar-name-title">
           <div className="track-bar-name">{currentTrack.artistName}</div>
-          <div className="track-bar-title">{currentTrack.title}</div>
+          <Link to={`/tracks/${currentTrack.id}`} className="track-bar-title">
+            {currentTrack.title}
+          </Link>
         </div>
       );
     } else {
@@ -288,7 +291,9 @@ class TrackBar extends React.Component {
             </div>
           </button>
           <div className="track-bar-details">
-            <div className="track-bar-art">{art}</div>
+            <Link to={`/tracks/${currentTrack.id}`} className="track-bar-art">
+              {art}
+            </Link>
             {details}
           </div>
         </div>
