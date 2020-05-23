@@ -36,9 +36,21 @@ flume = User.create(username: "flume", email: "flume@test.com", display_name: "F
 flume_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/flume-av.jpg')
 flume.avatar.attach(io: flume_avatar, filename: 'flume.jpg ')
 
+frank_ocean = User.create(username: "frank_ocean", email: "frank_ocean@test.com", display_name: "Frank Ocean", password: "hunter12")
+frank_ocean_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/frank_ocean_av.jpeg')
+frank_ocean.avatar.attach(io: frank_ocean_avatar, filename: 'frank_ocean.jpeg ')
+
 jaron = User.create(username: "jaron", email: "jaron@test.com", display_name: "Jaron", password: "hunter12")
 jaron_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/jaron-av.jpg')
 jaron.avatar.attach(io: jaron_avatar, filename: "jaron_avatar.jpg")
+
+jcole = User.create(username: "jcole", email: "jcole@test.com", display_name: "J Cole", password: "hunter12")
+jcole_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/jcole-av.jpg')
+jcole.avatar.attach(io: jcole_avatar, filename: "jcole-av.jpg")
+
+kids_see_ghosts = User.create(username: "kids_see_ghosts", email: "kids_see_ghosts@test.com", display_name: "Kids See Ghosts", password: "hunter12")
+kids_see_ghosts_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/kids_see_ghosts_av.jpeg')
+kids_see_ghosts.avatar.attach(io: kids_see_ghosts_avatar, filename: "kids_see_ghosts_av.jpeg")
 
 majorlazer = User.create(username: "majorlazer", email: "majorlazer@test.com", display_name: "Major Lazer", password: "hunter12")
 majorlazer_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/maj-laz-av.jpg')
@@ -52,6 +64,10 @@ maxime = User.create(username: "maxime", email: "maxime@test.com", display_name:
 maxime_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/max-av.jpg')
 maxime.avatar.attach(io: maxime_avatar, filename: "maxime_avatar.jpg")
 
+midnight_tyrannosaurus = User.create(username: "midnight_tyrannosaurus", email: "midnight_tyrannosaurus@test.com", display_name: "Midnight Tyrannosaurus.", password: "hunter12")
+midnight_tyrannosaurus_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/mt-av.jpg')
+midnight_tyrannosaurus.avatar.attach(io: midnight_tyrannosaurus_avatar, filename: "mt-av.jpg")
+
 nghtmre = User.create(username: "nghtmre", email: "nghtmre@test.com", display_name: "nghtmre", password: "hunter12")
 nghtmre_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/nmre-av.jpg')
 nghtmre.avatar.attach(io: nghtmre_avatar, filename: "nghtmre_avatar.jpg")
@@ -63,6 +79,10 @@ petitbiscuit.avatar.attach(io: petitbiscuit_avatar, filename: "petit_biscuit_ava
 pluko = User.create(username: "pluko", email: "pluko@test.com", display_name: "pluko", password: "hunter12")
 pluko_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/pluko-av.jpg')
 pluko.avatar.attach(io: pluko_avatar, filename: "pluko_avatar.jpg")
+
+rl_grime = User.create(username: "rl_grime", email: "rl_grime@test.com", display_name: "RL Grime", password: "hunter12")
+rl_grime_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/rl-av.jpg')
+rl_grime.avatar.attach(io: rl_grime_avatar, filename: "rl-av.jpg")
 
 sanholo = User.create(username: "sanholo", email: "sanholo@test.com", display_name: "San Holo", password: "hunter12")
 sanholo_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/san-av.jpg')
@@ -76,9 +96,17 @@ sylvanesso = User.create(username: "sylvanesso", email: "sylvanesso@test.com", d
 sylvanesso_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/sylvan-av.jpg')
 sylvanesso.avatar.attach(io: sylvanesso_avatar, filename: "sylvan_esso_avatar.jpg")
 
+sza = User.create(username: "sza", email: "sza@test.com", display_name: "SZA", password: "hunter12")
+sza_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/sza_av.jpg')
+sza.avatar.attach(io: sza_avatar, filename: "sza_av.jpg")
+
 tameimpala = User.create(username: "tameimpala", email: "tameimpala@test.com", display_name: "Tame Impala", password: "hunter12")
 tameimpala_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/tame-av.jpg')
 tameimpala.avatar.attach(io: tameimpala_avatar, filename: "tame_impala_avatar.jpg")
+
+the_xx = User.create(username: "the_xx", email: "the_xx@test.com", display_name: "The XX", password: "hunter12")
+the_xx_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/the_xx_av.jpeg')
+the_xx.avatar.attach(io: the_xx_avatar, filename: "the_xx_av.jpeg")
 
 thundercat = User.create(username: "thundercat", email: "thundercat@test.com", display_name: "Thundercat", password: "hunter12")
 thundercat_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/thunder-av.jpg')
@@ -87,6 +115,10 @@ thundercat.avatar.attach(io: thundercat_avatar, filename: "thundercat_avatar.jpg
 tokimonsta = User.create(username: "tokimonsta", email: "tokimonsta@test.com", display_name: "tokimonsta", password: "hunter12")
 tokimonsta_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/toki-av.jpg')
 tokimonsta.avatar.attach(io: tokimonsta_avatar, filename: "tokimonsta_avatar.jpg")
+
+tyler_the_creator = User.create(username: "tyler_the_creator", email: "tyler_the_creator@test.com", display_name: "Tyler the Creator", password: "hunter12")
+tyler_the_creator_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/tyler-av.jpg')
+tyler_the_creator.avatar.attach(io: tyler_the_creator_avatar, filename: "tyler-av.jpg")
 
 anamanaguchi_id = User.find_by(username: "anamanaguchi").id
 lorem = Track.create(title: "Lorem Ipsum", artist_name: "Anamanaguchi", artist_id: anamanaguchi_id)
@@ -137,12 +169,40 @@ voices.track_file.attach(io: file_voices, filename: "10 - Voices.flac")
 art_voices = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/flume.jpg")
 voices.album_art.attach(io: art_voices, filename: "cover.jpg")
 
+flume_id = User.find_by(username: "flume").id
+say_it = Track.create(title: "Say It", artist_name: "Flume", artist_id: flume_id)
+file_say_it = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Flume+-+Say+It+(feat.+Tove+Lo)+%5BIllenium+Remix%5D.mp3")
+say_it.track_file.attach(io: file_say_it, filename: "Flume - Say It (feat. Tove Lo) [Illenium Remix].mp3")
+art_say_it = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/flume_skin.jpg")
+say_it.album_art.attach(io: art_say_it, filename: "cover.jpg")
+
+frank_ocean_id = User.find_by(username: "frank_ocean").id
+nikes = Track.create(title: "Nikes", artist_name: "Frank Ocean", artist_id: frank_ocean_id)
+file_nikes = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Frank+Ocean+-+Nikes.mp3")
+nikes.track_file.attach(io: file_nikes, filename: "Frank Ocean - Nikes.mp3")
+art_nikes = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/frank_ocean_blonde.jpeg")
+nikes.album_art.attach(io: art_nikes, filename: "cover.jpg")
+
 jaron_id = User.find_by(username: "jaron").id
 sonder = Track.create(title: "Sonder", artist_name: "Jaron", artist_id: jaron_id)
 file_sonder = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/JaRon+-+Sonder.mp3")
 sonder.track_file.attach(io: file_sonder, filename: "JaRon - Sonder.flac")
 art_sonder = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/jaron.jpg")
 sonder.album_art.attach(io: art_sonder, filename: "sonder.jpg")
+
+jcole_id = User.find_by(username: "jcole").id
+kevins_heart = Track.create(title: "Kevin's Heart", artist_name: "J Cole", artist_id: jcole_id)
+file_kevins_heart = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/J.+Cole+-+Kevin%E2%80%99s+Heart.mp3")
+kevins_heart.track_file.attach(io: file_kevins_heart, filename: "J. Cole - Kevin’s Heart.mp3")
+art_kevins_heart = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/jcole.jpg")
+kevins_heart.album_art.attach(io: art_kevins_heart, filename: "jcole.jpg")
+
+kids_see_ghosts_id = User.find_by(username: "kids_see_ghosts").id
+reborn = Track.create(title: "Reborn", artist_name: "Kids See Ghosts", artist_id: kids_see_ghosts_id)
+file_reborn = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/KIDS+SEE+GHOSTS+-+Reborn.mp3")
+reborn.track_file.attach(io: file_reborn, filename: "KIDS SEE GHOSTS - Reborn.mp3")
+art_reborn = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/kids_see_ghosts.jpg")
+reborn.album_art.attach(io: art_reborn, filename: "kids_see_ghosts.jpg")
 
 majorlazer_id = User.find_by(username: "majorlazer").id
 water = Track.create(title: "Cold Water", artist_name: "Major Lazer", artist_id: majorlazer_id)
@@ -165,6 +225,13 @@ stuart.track_file.attach(io: file_stuart, filename: "06 - Stuart.flac")
 art_stuart = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/maxime.jpg")
 stuart.album_art.attach(io: art_stuart, filename: "cover.jpg")
 
+midnight_tyrannosaurus_id = User.find_by(username: "midnight_tyrannosaurus").id
+banana_planet = Track.create(title: "Banana Planet", artist_name: "Midnight Tyrannosaurus.", artist_id: midnight_tyrannosaurus_id)
+file_banana_planet = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Midnight+Tyrannosaurus+-+Banana+Planet.mp3")
+banana_planet.track_file.attach(io: file_banana_planet, filename: "Midnight Tyrannosaurus - Banana Planet.mp3")
+art_banana_planet = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/mtyran.jpg")
+banana_planet.album_art.attach(io: art_banana_planet, filename: "cover.jpg")
+
 nghtmre_id = User.find_by(username: "nghtmre").id
 gud = Track.create(title: "GUD VIBRATIONS", artist_name: "NGHTMRE & SLANDER", artist_id: nghtmre_id)
 file_gud = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/NGHTMRE+%26+SLANDER+-+GUD+VIBRATIONS.mp3")
@@ -185,6 +252,13 @@ file_love = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/pluko+-+l+
 love.track_file.attach(io: file_love, filename: "pluko - l o v e.flac")
 art_love = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/pluko.jpg")
 love.album_art.attach(io: art_love, filename: "love.jpg")
+
+rl_grime_id = User.find_by(username: "rl_grime").id
+ucla = Track.create(title: "UCLA", artist_name: "RL Grime", artist_id: rl_grime_id)
+file_ucla = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/RL+Grime+-+UCLA.mp3")
+ucla.track_file.attach(io: file_ucla, filename: "RL Grime - UCLA.mp3")
+art_ucla = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/rlgrime.jpg")
+ucla.album_art.attach(io: art_ucla, filename: "rlgrime.jpg")
 
 sanholo_id = User.find_by(username: "sanholo").id
 brighter = Track.create(title: "Brighter Days", artist_name: "San Holo", artist_id: sanholo_id)
@@ -207,6 +281,13 @@ wolf.track_file.attach(io: file_wolf, filename: "4 - Sylvan Esso - Wolf.flac")
 art_wolf = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/sylvan.jpg")
 wolf.album_art.attach(io: art_wolf, filename: "folder.jpg")
 
+sza_id = User.find_by(username: "sza").id
+go_gina = Track.create(title: "Go Gina", artist_name: "SZA", artist_id: sza_id)
+file_go_gina = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/SZA+-+Go+Gina.mp3")
+go_gina.track_file.attach(io: file_go_gina, filename: "SZA - Go Gina.mp3")
+art_go_gina = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/sza_ctrl.jpg")
+go_gina.album_art.attach(io: art_go_gina, filename: "sza_ctrl.jpg")
+
 tameimpala_id = User.find_by(username: "tameimpala").id
 lost = Track.create(title: "Lost In Yesterday", artist_name: "Tame Impala", artist_id: tameimpala_id)
 file_lost = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Tame+Impala+-+Lost+In+Yesterday.mp3")
@@ -219,7 +300,21 @@ dbdurag = Track.create(title: "Dragonball Durag", artist_name: "Thundercat", art
 file_dbdurag = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Thundercat+-+Dragonball+Durag.flac")
 dbdurag.track_file.attach(io: file_dbdurag, filename: "Thundercat - Dragonball Durag.flac")
 art_dbdurag = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/thundercat.jpeg")
-dbdurag.album_art.attach(io: art_dbdurag, filename: "dbd.jpeg")
+dbdurag.album_art.attach(io: art_dbdurag, filename: "thundercat.jpeg")
+
+thundercat_id = User.find_by(username: "thundercat").id
+fans_mail = Track.create(title: "A Fan's Mail (Tron Song Suite II)", artist_name: "Thundercat", artist_id: thundercat_id)
+file_fans_mail = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Thundercat+-+A+Fan's+Mail+(Tron+Song+Suite+II).mp3")
+fans_mail.track_file.attach(io: file_fans_mail, filename: "Thundercat - A Fan's Mail (Tron Song Suite II).mp3")
+art_fans_mail = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/thundercat_drunk.jpg")
+fans_mail.album_art.attach(io: art_fans_mail, filename: "thundercat_drunk.jpg")
+
+the_xx_id = User.find_by(username: "the_xx").id
+say_something_loving = Track.create(title: "Say Something Loving", artist_name: "The XX", artist_id: the_xx_id)
+file_say_something_loving = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/The+xx+-+Say+Something+Loving.mp3")
+say_something_loving.track_file.attach(io: file_say_something_loving, filename: "The xx - Say Something Loving.mp3")
+art_say_something_loving = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/xx_i_see_you.jpg")
+say_something_loving.album_art.attach(io: art_say_something_loving, filename: "xx_i_see_you.jpg")
 
 tokimonsta_id = User.find_by(username: "tokimonsta").id
 oneday = Track.create(title: "One Day", artist_name: "tokimonsta", artist_id: tokimonsta_id)
@@ -227,4 +322,11 @@ file_oneday = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/TOKiMONS
 oneday.track_file.attach(io: file_oneday, filename: "TOKiMONSTA - One Day.flac")
 art_oneday = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/toki.jpg")
 oneday.album_art.attach(io: art_oneday, filename: "one_day.jpg")
+
+tyler_the_creator_id = User.find_by(username: "tyler_the_creator").id
+earfquake = Track.create(title: "EARFQUAKE", artist_name: "Tyler the Creator", artist_id: tyler_the_creator_id)
+file_earfquake = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/Tyler%2C+The+Creator+-+EARFQUAKE.mp3")
+earfquake.track_file.attach(io: file_earfquake, filename: "Tyler, The Creator - EARFQUAKE.mp3")
+art_earfquake = open("https://fidelityfog-seed.s3.us-east-2.amazonaws.com/tyler.jpg")
+earfquake.album_art.attach(io: art_earfquake, filename: "tyler.jpg")
 
