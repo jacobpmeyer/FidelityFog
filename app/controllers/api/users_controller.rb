@@ -13,11 +13,12 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]).includes(:tracks)
+    render :show
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar)
+    params.require(:user).permit(:username, :password, :email, :avatar, :id)
   end
 
 end
