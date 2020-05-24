@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_one_attached :banner
+
   def password=(password)
       @password = password
       self.password_digest = BCrypt::Password.create(password)
