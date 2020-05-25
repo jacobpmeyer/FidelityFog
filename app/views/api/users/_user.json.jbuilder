@@ -6,6 +6,7 @@ if user.avatar.attached?
 end
 if user.banner.attached?
   banner = json.banner url_for(user.banner)
+end
 
 json.extract! user, :id, :username, :email, :bio, :age, :tracks, :display_name
 json.avatar avatar

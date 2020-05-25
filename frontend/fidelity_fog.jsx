@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
-import { searchForTracks } from "./actions/search_actions";
-import { fetchUser } from "../../actions/user_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -23,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.searchForTracks = searchForTracks;
-  window.fetchUser = fetchUser;
 
   ReactDOM.render(<Root store={store} />, root);
 });
