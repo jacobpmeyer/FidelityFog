@@ -54,7 +54,7 @@ frank_ocean = User.create(username: "frank_ocean", email: "frank_ocean@test.com"
 frank_ocean_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/frank_ocean_av.jpeg')
 frank_ocean.avatar.attach(io: frank_ocean_avatar, filename: 'frank_ocean.jpeg ')
 frank_ocean_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/frank_banner.jpg')
-frank_ocean.banner.attach(io: frank_ocean_banner, filename: 'frank_ocean_banner.jpeg ')
+frank_ocean.banner.attach(io: frank_ocean_banner, filename: 'frank_banner.jpg ')
 
 jaron = User.create(username: "jaron", email: "jaron@test.com", display_name: "Jaron", password: "hunter12")
 jaron_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/jaron-av.jpg')
@@ -72,7 +72,7 @@ kids_see_ghosts = User.create(username: "kids_see_ghosts", email: "kids_see_ghos
 kids_see_ghosts_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/kids_see_ghosts_av.jpeg')
 kids_see_ghosts.avatar.attach(io: kids_see_ghosts_avatar, filename: "kids_see_ghosts_av.jpeg")
 kids_see_ghosts_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/kids_see_ghosts_banner.jpg')
-kids_see_ghosts.banner.attach(io: kids_see_ghosts_banner, filename: "kids_see_ghosts_banner.jpeg")
+# kids_see_ghosts.banner.attach(io: kids_see_ghosts_banner, filename: "kids_see_ghosts_banner.jpg")
 
 majorlazer = User.create(username: "majorlazer", email: "majorlazer@test.com", display_name: "Major Lazer", password: "hunter12")
 majorlazer_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/maj-laz-av.jpg')
@@ -102,13 +102,13 @@ nghtmre = User.create(username: "nghtmre", email: "nghtmre@test.com", display_na
 nghtmre_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/nmre-av.jpg')
 nghtmre.avatar.attach(io: nghtmre_avatar, filename: "nghtmre_avatar.jpg")
 nghtmre_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/nmre_banner.jpg')
-nghtmre.banner.attach(io: nghtmre_banner, filename: "nghtmre_banner.jpg")
+nghtmre.banner.attach(io: nghtmre_banner, filename: "nmre_banner.jpg")
 
 petitbiscuit = User.create(username: "petitbiscuit", email: "petitbiscuit@test.com", display_name: "Petit Biscuit", password: "hunter12")
 petitbiscuit_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/petite-av.jpg')
 petitbiscuit.avatar.attach(io: petitbiscuit_avatar, filename: "petit_biscuit_avatar.jpg")
 petitbiscuit_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/petit_banner.jpg')
-petitbiscuit.banner.attach(io: petitbiscuit_banner, filename: "petit_biscuit_banner.jpg")
+petitbiscuit.banner.attach(io: petitbiscuit_banner, filename: "petit_banner.jpg")
 
 pluko = User.create(username: "pluko", email: "pluko@test.com", display_name: "pluko", password: "hunter12")
 pluko_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/pluko-av.jpg')
@@ -141,10 +141,10 @@ sylvanesso_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/ba
 sylvanesso.banner.attach(io: sylvanesso_banner, filename: "sylvan_esso_banner.jpg")
 
 sza = User.create(username: "sza", email: "sza@test.com", display_name: "SZA", password: "hunter12")
-sza_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/sza_av.jpg')
-sza.avatar.attach(io: sza_avatar, filename: "sza_av.jpg")
+sza_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/sza_av.jpeg')
+sza.avatar.attach(io: sza_avatar, filename: "sza_av.jpeg")
 sza_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/sza_banner.jpeg')
-sza.banner.attach(io: sza_banner, filename: "sza_banner.jpg")
+sza.banner.attach(io: sza_banner, filename: "sza_banner.jpeg")
 
 tameimpala = User.create(username: "tameimpala", email: "tameimpala@test.com", display_name: "Tame Impala", password: "hunter12")
 tameimpala_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/tame-av.jpg')
@@ -156,13 +156,13 @@ the_xx = User.create(username: "the_xx", email: "the_xx@test.com", display_name:
 the_xx_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/the_xx_av.jpeg')
 the_xx.avatar.attach(io: the_xx_avatar, filename: "the_xx_av.jpeg")
 the_xx_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/the_xx_banner.jpg')
-the_xx.banner.attach(io: the_xx_banner, filename: "the_xx_banner.jpeg")
+the_xx.banner.attach(io: the_xx_banner, filename: "the_xx_banner.jpg")
 
 thundercat = User.create(username: "thundercat", email: "thundercat@test.com", display_name: "Thundercat", password: "hunter12")
 thundercat_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/thunder-av.jpg')
 thundercat.avatar.attach(io: thundercat_avatar, filename: "thundercat_avatar.jpg")
 thundercat_banner = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/banners/thunercat_banner.jpg')
-thundercat.banner.attach(io: thundercat_banner, filename: "thundercat_banner.jpg")
+thundercat.banner.attach(io: thundercat_banner, filename: "thunercat_banner.jpg")
 
 tokimonsta = User.create(username: "tokimonsta", email: "tokimonsta@test.com", display_name: "tokimonsta", password: "hunter12")
 tokimonsta_avatar = open('https://fidelityfog-seed.s3.us-east-2.amazonaws.com/avs/toki-av.jpg')

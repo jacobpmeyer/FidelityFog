@@ -10,6 +10,7 @@ import UserNavBarContainer from "./nav_bar/user_nav_bar_container";
 import EditContainer from "./edit/edit_container";
 import TrackBarContainer from "./track_bar/track_bar_container";
 import SearchResultsContainer from "./search/SearchResultsContainer";
+import UserShowContainer from "./user_show/UserShowContainer";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           path="/tracks/:trackId"
           component={TrackShowContainer}
         />
+        <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
       </Switch>
