@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import DiscoverTracksContainer from "../user_discover/discover_tracks_container";
 
 const UserShow = ({ user, fetchUser, match }) => {
@@ -19,8 +19,6 @@ const UserShow = ({ user, fetchUser, match }) => {
   }
 
   const name = user ? user.displayName || user.username : null;
-
-  if (user) console.log(Object.values(user.tracks));
 
   if (user) {
     return (
