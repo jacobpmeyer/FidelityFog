@@ -1,4 +1,4 @@
-.user-show {
+.user-show-page {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -20,4 +20,25 @@
   margin-left: 30px;
   background-size: contain;
   border-radius: 50%;
+}
+
+.username-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  h1 {
+    font-size: 24px;
+    background-color: black;
+    color: #fff;
+    margin: 30px 30px 30px;
+    width: fit-content;
+    padding: 9px;
+  }
+}
+
+.user-show-tracks-header {
+  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 23px;
+  margin: 30px 0;
 }

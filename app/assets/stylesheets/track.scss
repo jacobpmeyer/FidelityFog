@@ -1,4 +1,4 @@
-.play-button {
+.play-button, .pause-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,24 +12,16 @@
     width: 28px;
     color: white;
     fill: white;
-    padding-left: 3px;
+  }
+  &:hover {
+    background-color: #f30;
+    border-color: #f30;
   }
 }
 
-.pause-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 55px;
-  border: 1px solid #f50;
-  border-radius: 50%;
-  background-color: #f50;
-  cursor: pointer;
+.play-button {
   img {
-    width: 28px;
-    color: white;
-    fill: white;
+    padding-left: 3px;
   }
 }
 
@@ -106,6 +98,9 @@
   background-color: rgba(0,0,0,.8);
   margin-bottom: 7px;
   width: fit-content;
+  &:hover {
+    color: #f2f2f2;
+  }
 }
 
 .track-link-show {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import DiscoverTracksContainer from "../user_discover/discover_tracks_container";
 
 const UserShow = ({ user, fetchUser, match }) => {
   useEffect(() => {
@@ -17,15 +18,25 @@ const UserShow = ({ user, fetchUser, match }) => {
     avatarUrl = { backgroundImage: `url(${user.avatar})` };
   }
 
-  if (user) console.log(user.tracks);
+  const name = user ? user.displayName || user.username : null;
+
+  if (user) console.log(Object.values(user.tracks));
 
   if (user) {
     return (
       <div className="user">
-        <div className="user-show">
+        <div className="user-show-page">
           <div style={bannerUrl} className="user-banner">
             <div style={avatarUrl} className="user-avatar"></div>
-            <h1>{user.displayName || user.username}</h1>
+            <div className="username-wrapper">
+              <h1>{name}</h1>
+            </div>
+          </div>
+          <h1 className="user-show-tracks-header">
+            Check out these tracks from {name}
+          </h1>
+          <div className="user-show-tracks-list">
+            <DiscoverTracksContainer tracks={Object.values(user.tracks)} />
           </div>
         </div>
       </div>
