@@ -7,9 +7,14 @@ const UserShow = ({ user, fetchUser, match }) => {
     }
   });
 
-  let imageUrl = null;
+  let bannerUrl = null;
   if (user && user.banner) {
-    imageUrl = { backgroundImage: `url(${user.banner})` };
+    bannerUrl = { backgroundImage: `url(${user.banner})` };
+  }
+
+  let avatarUrl = null;
+  if (user && user.avatar) {
+    avatarUrl = { backgroundImage: `url(${user.avatar})` };
   }
 
   if (user) console.log(user.tracks);
@@ -18,7 +23,10 @@ const UserShow = ({ user, fetchUser, match }) => {
     return (
       <div className="user">
         <div className="user-show">
-          <div style={imageUrl} className="user-banner"></div>
+          <div style={bannerUrl} className="user-banner">
+            <div style={avatarUrl} className="user-avatar"></div>
+            <h1>{user.displayName || user.username}</h1>
+          </div>
         </div>
       </div>
     );
