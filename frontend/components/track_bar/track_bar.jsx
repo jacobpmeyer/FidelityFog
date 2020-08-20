@@ -254,9 +254,6 @@ class TrackBar extends React.Component {
           >
             {shufButton}
           </button>
-          {/* <button className="track-bar-button bar-repeat-before">
-            <img src={window.track_bar_repeat_before} alt="repeat button" />
-          </button> */}
           <div className="track-bar-progress-container">
             <div className="start-time">{this.state.startTime}</div>
             <div
